@@ -72,4 +72,4 @@ jobs:
           app-name: 'checkMatchData'
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_628F32BCF1C34BF88F4B13AACF928720 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D99EAFC103C44C358F680ACA63A312A5 }}
