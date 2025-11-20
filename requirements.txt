@@ -1,3 +1,4 @@
 azure-storage-blob
 python-dotenv
 pandas
+azure-functions
