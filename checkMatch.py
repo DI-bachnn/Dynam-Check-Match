@@ -73,7 +73,7 @@ for folder1, folder2 in folders_con:
             log(f"    [{rows_none}]x[{cols_none}] - Dữ liệu giống nhau hoàn toàn")
         else:
             # ==============================
-            # 💡 CHECK ĐỂ BỎ QUA FILE CHỈ KHÁC TIMESTAMP
+            # CHECK ĐỂ BỎ QUA FILE CHỈ KHÁC TIMESTAMP
             # ==============================
             
             TIMESTAMP_COLUMNS = ["作成日時", "データ更新時刻"]
