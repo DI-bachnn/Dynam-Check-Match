@@ -25,7 +25,7 @@ def main(req: func.HttpRequest, context: func.Context) -> func.HttpResponse:
     logger = context.logger
 
     def log(line: str):
-        logger.info(line)       # <-- log ra console
+        print(line, flush=True)     # <-- log ra console
         output_lines.append(line)
 
     try:
