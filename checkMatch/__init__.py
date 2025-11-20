@@ -6,15 +6,8 @@ import pandas as pd
 # ==============================
 # Hàm tiện ích
 # ==============================
-output_lines = []
-
-def log(line: str):
-    print(line)
-    output_lines.append(line)
-
 def read_csv_with_jp_encoding(blob_client):
     stream = blob_client.download_blob().readall()
-
     for enc in ["shift_jis", "cp932"]:
         try:
             text = stream.decode(enc)
@@ -27,9 +20,13 @@ def read_csv_with_jp_encoding(blob_client):
 # ==============================
 # Hàm chính HTTP trigger
 # ==============================
-def main(req: func.HttpRequest) -> func.HttpResponse:
-    global output_lines
+def main(req: func.HttpRequest, context: func.Context) -> func.HttpResponse:
     output_lines = []
+    logger = context.logger
+
+    def log(line: str):
+        logger.info(line)       # <-- log ra console
+        output_lines.append(line)
 
     try:
         # ======= Cấu hình Blob =======
@@ -109,10 +106,9 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
                         log("    Không thể compare dataframe")
 
     except Exception as e:
-        err_text = f"❌ Lỗi tổng: {e}\n{traceback.format_exc()}"
-        output_lines.append(err_text)
+        err_text = f"❌ Lỗi tổng: {e}"
+        log(err_text)
         return func.HttpResponse("\n".join(output_lines), status_code=500, mimetype="text/plain")
 
     # Trả kết quả HTTP
-    result_text = "\n".join(output_lines)
-    return func.HttpResponse(result_text, mimetype="text/plain")
+    return func.HttpResponse("\n".join(output_lines), mimetype="text/plain")
