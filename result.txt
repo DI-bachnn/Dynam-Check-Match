@@ -1,0 +1,1295 @@
+✔ KD/000010043920251030/000010043920251030ZA_2.csv
+    [720]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ KD/000010043920251030/000010043920251030ZB_2.csv
+    [739]x[26] - Dữ liệu giống nhau hoàn toàn
+✔ KD/000010043920251030/000010043920251030ZI_2.csv
+    [4]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ KD/000010043920251030/000010043920251030ZK_2.csv
+    [166]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ KD/000010043920251030/BLOCK_REPORT.csv
+    [4]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ KD/000010043920251030/CURRENT_BLOCK.csv
+    [4]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ KD/000010043920251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+❌ KD/000010043920251030/CURRENT_KISYU.csv
+    Cùng kích thước: [130]x[16]
+    Khác dữ liệu ở các cell
+    Các cell khác ví dụ:
+     機種コード                       機種名称                   賞球数1      
+      self    other              self             other self other
+0  11971.0   7674.0   ＰＡＣＹＢＯＲＧ００９Ｎ２－Ｋ  ＰＡルパンザファースト不二子ＧＯ  NaN   NaN
+1  19077.0  24074.0     ＰネオモンスターハウスＡＬ  Ｐ銀河鉄道９９９ＮＪＬ０ＹＵ１Ｙ  NaN   NaN
+2   7674.0  24072.0  ＰＡルパンザファースト不二子ＧＯ   ＰＡ戦国乙女レジェンド８９ＧＯ  NaN   NaN
+3  16429.0  93104.0   Ｐクイーンズブレイド奈落Ｖ１Ｃ     ｅＦガンダムユニコーン２Ｒ  NaN   NaN
+4  24074.0  30050.0  Ｐ銀河鉄道９９９ＮＪＬ０ＹＵ１Ｙ  Ｐ中森明菜・歌姫伝説楽ＫＤ－ＫＴ  NaN   NaN
+✔ KD/000010043920251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ KD/000010043920251030/S_RATE_TOTAL.csv
+    [64]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ KD/000010043920251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ KD/000010043920251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ KD/000010043920251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ KD/000010043920251030/YUUGI_FILE.csv
+    [720]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050232020251030/000050232020251030ZA_2.csv
+    [611]x[156] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050232020251030/000050232020251030ZI_2.csv
+    [4]x[55] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050232020251030/000050232020251030ZK_2.csv
+    [281]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050232020251030/BLOCK_REPORT.csv
+    [4]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050232020251030/CURRENT_BLOCK.csv
+    [4]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050232020251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050232020251030/CURRENT_KISYU.csv
+    [2]x[16] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050232020251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050232020251030/S_RATE_TOTAL.csv
+    [64]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050232020251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ MA/000050232020251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ MA/000050232020251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050232020251030/YUUGI_FILE.csv
+    [611]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050203020251030/000050203020251030ZA_2.csv
+    [420]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050203020251030/000050203020251030ZI_2.csv
+    [5]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050203020251030/000050203020251030ZK_2.csv
+    [84]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050203020251030/BLOCK_REPORT.csv
+    [5]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050203020251030/CURRENT_BLOCK.csv
+    [5]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050203020251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050203020251030/CURRENT_KISYU.csv
+    [2]x[16] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050203020251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050203020251030/S_RATE_TOTAL.csv
+    [80]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050203020251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ SD/000050203020251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ SD/000050203020251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050203020251030/YUUGI_FILE.csv
+    [420]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050259020251030/000050259020251030ZA_2.csv
+    [616]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050259020251030/000050259020251030ZI_2.csv
+    [5]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050259020251030/000050259020251030ZK_2.csv
+    [19]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050259020251030/BLOCK_REPORT.csv
+    [5]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050259020251030/CURRENT_BLOCK.csv
+    [5]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050259020251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050259020251030/CURRENT_KISYU.csv
+    [2]x[16] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050259020251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050259020251030/S_RATE_TOTAL.csv
+    [80]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050259020251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ SD/000050259020251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ SD/000050259020251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050259020251030/YUUGI_FILE.csv
+    [616]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070820251030/000020070820251030TD_2.csv
+    [5]x[258] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070820251030/000020070820251030TP_2.csv
+    [5]x[193] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070820251030/000020070820251030TR_2.csv
+    [5]x[274] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070820251030/000020070820251030ZA_2.csv
+    [450]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070820251030/000020070820251030ZB_2.csv
+    [471]x[26] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070820251030/000020070820251030ZI_2.csv
+    [4]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070820251030/000020070820251030ZK_2.csv
+    [241]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070820251030/BLOCK_REPORT.csv
+    [0]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070820251030/CURRENT_BLOCK.csv
+    [4]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070820251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+❌ DK/000020070820251030/CURRENT_KISYU.csv
+    Cùng kích thước: [230]x[16]
+    Khác dữ liệu ở các cell
+    Các cell khác ví dụ:
+     機種コード                      機種名称                  賞球数1      
+      self    other             self            other self other
+0  24082.0   8248.0  ＰバイオハザードＲＥ２９ＹＺ１  Ｐエヴァンゲリオン　シト新生Ｙ  1.0   3.0
+1  93104.0   2363.0    ｅＦガンダムユニコーン２Ｒ  ＰＡナナシーお江戸ｖｅｒ．Ｖ２  NaN   NaN
+2   8248.0  15346.0  Ｐエヴァンゲリオン　シト新生Ｙ  ＰＬＴ　ＯＶＥＲＬＯＲＤ　ＭＥ  3.0   1.0
+3   2363.0   8270.0  ＰＡナナシーお江戸ｖｅｒ．Ｖ２     Ｐエヴァンゲリオン１５Ｆ  NaN   NaN
+4  15346.0   4294.0  ＰＬＴ　ＯＶＥＲＬＯＲＤ　ＭＥ        ｅ乃木坂４６ⅡＫ４  NaN   NaN
+✔ DK/000020070820251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070820251030/S_RATE_TOTAL.csv
+    [64]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070820251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ DK/000020070820251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ DK/000020070820251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070820251030/YUUGI_FILE.csv
+    [450]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043320251030/000010043320251030TD_2.csv
+    [6]x[246] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043320251030/000010043320251030TP_2.csv
+    [6]x[162] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043320251030/000010043320251030TR_2.csv
+    [6]x[241] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043320251030/000010043320251030ZA_2.csv
+    [316]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043320251030/000010043320251030ZB_2.csv
+    [318]x[26] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043320251030/000010043320251030ZI_2.csv
+    [3]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043320251030/000010043320251030ZK_2.csv
+    [166]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043320251030/BLOCK_REPORT.csv
+    [3]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043320251030/CURRENT_BLOCK.csv
+    [3]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043320251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+❌ DK/000010043320251030/CURRENT_KISYU.csv
+    Cùng kích thước: [149]x[16]
+    Khác dữ liệu ở các cell
+    Các cell khác ví dụ:
+     機種コード                       機種名称                  機種グループコード       賞球数1      
+      self    other              self            other      self other self other
+0  27055.0  93115.0  Ｐ冬のソナタＭｙＭｅｍｏｒｙＭ７        ｅブルーロックＭＺ       NaN   NaN  3.0   1.0
+1   6654.0   6675.0    ＰＦシンフォギア黄金絶唱ＹＲ  ＰＡ戦姫絶唱シンフォギア４ＡＲ       NaN   NaN  1.0   3.0
+2   2356.0  20098.0   ＰＡ豊丸ととある企業の最新作２   ｅ東京リベンジャーズＧＦＥＣ       NaN   NaN  NaN   NaN
+3  93115.0  42488.0         ｅブルーロックＭＺ     Ｐ北斗の拳暴凶星ＳＦＰＡ       NaN   NaN  NaN   NaN
+4  11935.0  11953.0  Ｐ００９　ＣＹＢＯＲＧ　Ｎ３－Ｋ     Ｐうる星やつら２Ｌ２－Ｋ       NaN   NaN  1.0   2.0
+✔ DK/000010043320251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043320251030/S_RATE_TOTAL.csv
+    [48]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043320251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ DK/000010043320251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ DK/000010043320251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043320251030/YUUGI_FILE.csv
+    [316]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050229020251030/000050229020251030ZA_2.csv
+    [360]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050229020251030/000050229020251030ZI_2.csv
+    [2]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050229020251030/000050229020251030ZK_2.csv
+    [92]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050229020251030/BLOCK_REPORT.csv
+    [2]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050229020251030/CURRENT_BLOCK.csv
+    [2]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050229020251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050229020251030/CURRENT_KISYU.csv
+    [1]x[16] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050229020251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050229020251030/S_RATE_TOTAL.csv
+    [32]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050229020251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ SD/000050229020251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ SD/000050229020251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050229020251030/YUUGI_FILE.csv
+    [360]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043120251030/000010043120251030TD_2.csv
+    [15]x[246] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043120251030/000010043120251030TP_2.csv
+    [15]x[162] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043120251030/000010043120251030TR_2.csv
+    [15]x[241] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043120251030/000010043120251030ZA_2.csv
+    [825]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043120251030/000010043120251030ZB_2.csv
+    [846]x[26] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043120251030/000010043120251030ZI_2.csv
+    [4]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043120251030/000010043120251030ZK_2.csv
+    [293]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043120251030/BLOCK_REPORT.csv
+    [4]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043120251030/CURRENT_BLOCK.csv
+    [4]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043120251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+❌ DK/000010043120251030/CURRENT_KISYU.csv
+    Cùng kích thước: [240]x[16]
+    Khác dữ liệu ở các cell
+    Các cell khác ví dụ:
+     機種コード                       機種名称                   機種グループコード       賞球数1      
+      self    other              self             other      self other self other
+1   6654.0  15354.0    ＰＦシンフォギア黄金絶唱ＹＲ          ｅパリピ孔明ＮＢ       NaN   NaN  NaN   NaN
+2  15354.0   6660.0          ｅパリピ孔明ＮＢ    Ｐフィーバー炎炎ノ消防隊ＹＲ       NaN   NaN  NaN   NaN
+3  14033.0  30050.0  Ｐリング呪いの７日間３ＬＴＪＳＧ  Ｐ中森明菜・歌姫伝説楽ＫＤ－ＫＴ       NaN   NaN  NaN   NaN
+4   6660.0  26091.0    Ｐフィーバー炎炎ノ消防隊ＹＲ    ＰＡわんパラセレブレーション       NaN   NaN  NaN   NaN
+5  15344.0  24086.0   ＰＡ激デジ牙狼月虹ノ旅人－ＲＬ          Ｐうまい棒２Ｖ３      12.0  22.0  1.0  10.0
+✔ DK/000010043120251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043120251030/S_RATE_TOTAL.csv
+    [64]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043120251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ DK/000010043120251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ DK/000010043120251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043120251030/YUUGI_FILE.csv
+    [825]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050260020251030/000050260020251030ZA_2.csv
+    [638]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050260020251030/000050260020251030ZI_2.csv
+    [4]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050260020251030/000050260020251030ZK_2.csv
+    [136]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050260020251030/BLOCK_REPORT.csv
+    [4]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050260020251030/CURRENT_BLOCK.csv
+    [4]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050260020251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050260020251030/CURRENT_KISYU.csv
+    [2]x[16] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050260020251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050260020251030/S_RATE_TOTAL.csv
+    [64]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050260020251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ SD/000050260020251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ SD/000050260020251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050260020251030/YUUGI_FILE.csv
+    [637]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050221020251030/000050221020251030ZA_2.csv
+    [466]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050221020251030/000050221020251030ZI_2.csv
+    [4]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050221020251030/000050221020251030ZK_2.csv
+    [48]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050221020251030/BLOCK_REPORT.csv
+    [4]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050221020251030/CURRENT_BLOCK.csv
+    [4]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050221020251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050221020251030/CURRENT_KISYU.csv
+    [2]x[16] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050221020251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050221020251030/S_RATE_TOTAL.csv
+    [64]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050221020251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ SD/000050221020251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ SD/000050221020251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050221020251030/YUUGI_FILE.csv
+    [466]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050213020251030/000050213020251030ZA_2.csv
+    [300]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050213020251030/000050213020251030ZI_2.csv
+    [2]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050213020251030/000050213020251030ZK_2.csv
+    [122]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050213020251030/BLOCK_REPORT.csv
+    [2]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050213020251030/CURRENT_BLOCK.csv
+    [2]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050213020251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050213020251030/CURRENT_KISYU.csv
+    [1]x[16] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050213020251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050213020251030/S_RATE_TOTAL.csv
+    [32]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050213020251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ SD/000050213020251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ SD/000050213020251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050213020251030/YUUGI_FILE.csv
+    [300]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050266020251030/000050266020251030ZA_2.csv
+    [550]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050266020251030/000050266020251030ZI_2.csv
+    [4]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050266020251030/000050266020251030ZK_2.csv
+    [170]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050266020251030/BLOCK_REPORT.csv
+    [4]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050266020251030/CURRENT_BLOCK.csv
+    [4]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050266020251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050266020251030/CURRENT_KISYU.csv
+    [2]x[16] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050266020251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050266020251030/S_RATE_TOTAL.csv
+    [64]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050266020251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ SD/000050266020251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ SD/000050266020251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050266020251030/YUUGI_FILE.csv
+    [550]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050238020251030/000050238020251030ZA_2.csv
+    [512]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050238020251030/000050238020251030ZI_2.csv
+    [4]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050238020251030/000050238020251030ZK_2.csv
+    [33]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050238020251030/BLOCK_REPORT.csv
+    [4]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050238020251030/CURRENT_BLOCK.csv
+    [4]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050238020251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050238020251030/CURRENT_KISYU.csv
+    [2]x[16] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050238020251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050238020251030/S_RATE_TOTAL.csv
+    [64]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050238020251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ SD/000050238020251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ SD/000050238020251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050238020251030/YUUGI_FILE.csv
+    [512]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ KD/000020070620251030/000020070620251030ZA_2.csv
+    [483]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ KD/000020070620251030/000020070620251030ZB_2.csv
+    [496]x[26] - Dữ liệu giống nhau hoàn toàn
+✔ KD/000020070620251030/000020070620251030ZI_2.csv
+    [4]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ KD/000020070620251030/000020070620251030ZK_2.csv
+    [241]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ KD/000020070620251030/BLOCK_REPORT.csv
+    [4]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ KD/000020070620251030/CURRENT_BLOCK.csv
+    [4]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ KD/000020070620251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+❌ KD/000020070620251030/CURRENT_KISYU.csv
+    Cùng kích thước: [215]x[16]
+    Khác dữ liệu ở các cell
+    Các cell khác ví dụ:
+     機種コード                      機種名称                   機種グループコード       賞球数1      
+      self    other             self             other      self other self other
+0   4289.0  11937.0  Ｐぱちんこ水戸黄門４ＫＡＣＪ１     ｅ花の慶次～裂ＤＬ２－ＭＸ       NaN   NaN  NaN   NaN
+1  11937.0   6675.0    ｅ花の慶次～裂ＤＬ２－ＭＸ   ＰＡ戦姫絶唱シンフォギア４ＡＲ       NaN   NaN  1.0   3.0
+2   6644.0  51090.0    Ｐフィーバー炎炎ノ消防隊Ｇ     Ｐドラムだ！金ドン９９ＳＢ       NaN   NaN  NaN   NaN
+3   6675.0  15351.0  ＰＡ戦姫絶唱シンフォギア４ＡＲ  Ｐ世界でいちばん強くなりたいＭＱ       NaN   NaN  3.0   1.0
+4  51090.0  11971.0    Ｐドラムだ！金ドン９９ＳＢ   ＰＡＣＹＢＯＲＧ００９Ｎ２－Ｋ       NaN   NaN  NaN   NaN
+✔ KD/000020070620251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ KD/000020070620251030/S_RATE_TOTAL.csv
+    [64]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ KD/000020070620251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ KD/000020070620251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ KD/000020070620251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ KD/000020070620251030/YUUGI_FILE.csv
+    [483]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043220251030/000010043220251030TD_2.csv
+    [7]x[246] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043220251030/000010043220251030TP_2.csv
+    [7]x[162] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043220251030/000010043220251030TR_2.csv
+    [7]x[241] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043220251030/000010043220251030ZA_2.csv
+    [711]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043220251030/000010043220251030ZB_2.csv
+    [727]x[26] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043220251030/000010043220251030ZI_2.csv
+    [2]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043220251030/000010043220251030ZK_2.csv
+    [207]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043220251030/BLOCK_REPORT.csv
+    [2]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043220251030/CURRENT_BLOCK.csv
+    [2]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043220251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+❌ DK/000010043220251030/CURRENT_KISYU.csv
+    Cùng kích thước: [207]x[16]
+    Khác dữ liệu ở các cell
+    Các cell khác ví dụ:
+     機種コード                      機種名称                  機種グループコード        賞球数1      
+      self    other             self            other      self other  self other
+0  93109.0  24057.0         ｅＦダンまち２Ｇ          Ｐうまい棒Ｖ１      12.0  22.0   1.0  10.0
+1  24057.0   6666.0          Ｐうまい棒Ｖ１   ＰＦ革命機ヴァルヴレイヴ３Ｙ      22.0  12.0  10.0   1.0
+2   6666.0  46109.0   ＰＦ革命機ヴァルヴレイヴ３Ｙ      ｅシャーマンキングＬＢ       NaN   NaN   NaN   NaN
+3   8273.0   6675.0  Ｐ宇宙戦艦ヤマト２２０２－３Ｇ  ＰＡ戦姫絶唱シンフォギア４ＡＲ       NaN   NaN   1.0   3.0
+4  27053.0  11913.0  Ｐアズールレーン異次元トリガー   ＰＡ乗物娘Ｎ－Ｋ　ＹＴ２００       NaN   NaN   NaN   NaN
+✔ DK/000010043220251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043220251030/S_RATE_TOTAL.csv
+    [32]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043220251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ DK/000010043220251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ DK/000010043220251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043220251030/YUUGI_FILE.csv
+    [711]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050249020251030/000050249020251030ZA_2.csv
+    [601]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050249020251030/000050249020251030ZI_2.csv
+    [5]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050249020251030/000050249020251030ZK_2.csv
+    [83]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050249020251030/BLOCK_REPORT.csv
+    [5]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050249020251030/CURRENT_BLOCK.csv
+    [5]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050249020251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050249020251030/CURRENT_KISYU.csv
+    [2]x[16] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050249020251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050249020251030/S_RATE_TOTAL.csv
+    [80]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050249020251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ SD/000050249020251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ SD/000050249020251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050249020251030/YUUGI_FILE.csv
+    [632]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050252020251030/000050252020251030ZA_2.csv
+    [480]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050252020251030/000050252020251030ZI_2.csv
+    [4]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050252020251030/000050252020251030ZK_2.csv
+    [66]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050252020251030/BLOCK_REPORT.csv
+    [4]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050252020251030/CURRENT_BLOCK.csv
+    [4]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050252020251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050252020251030/CURRENT_KISYU.csv
+    [1]x[16] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050252020251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050252020251030/S_RATE_TOTAL.csv
+    [64]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050252020251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ SD/000050252020251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ SD/000050252020251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050252020251030/YUUGI_FILE.csv
+    [320]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050269020251030/000050269020251030ZA_2.csv
+    [608]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050269020251030/000050269020251030ZI_2.csv
+    [5]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050269020251030/000050269020251030ZK_2.csv
+    [108]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050269020251030/BLOCK_REPORT.csv
+    [5]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050269020251030/CURRENT_BLOCK.csv
+    [5]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050269020251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050269020251030/CURRENT_KISYU.csv
+    [2]x[16] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050269020251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050269020251030/S_RATE_TOTAL.csv
+    [80]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050269020251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ SD/000050269020251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ SD/000050269020251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050269020251030/YUUGI_FILE.csv
+    [608]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050212020251030/000050212020251030ZA_2.csv
+    [734]x[156] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050212020251030/000050212020251030ZI_2.csv
+    [3]x[55] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050212020251030/000050212020251030ZK_2.csv
+    [262]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050212020251030/BLOCK_REPORT.csv
+    [3]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050212020251030/CURRENT_BLOCK.csv
+    [3]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050212020251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050212020251030/CURRENT_KISYU.csv
+    [2]x[16] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050212020251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050212020251030/S_RATE_TOTAL.csv
+    [48]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050212020251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ MA/000050212020251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ MA/000050212020251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050212020251030/YUUGI_FILE.csv
+    [770]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050247020251030/000050247020251030ZA_2.csv
+    [838]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050247020251030/000050247020251030ZI_2.csv
+    [3]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050247020251030/000050247020251030ZK_2.csv
+    [60]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050247020251030/BLOCK_REPORT.csv
+    [3]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050247020251030/CURRENT_BLOCK.csv
+    [3]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050247020251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050247020251030/CURRENT_KISYU.csv
+    [2]x[16] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050247020251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050247020251030/S_RATE_TOTAL.csv
+    [48]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050247020251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ SD/000050247020251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ SD/000050247020251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050247020251030/YUUGI_FILE.csv
+    [838]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050265020251030/000050265020251030ZA_2.csv
+    [605]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050265020251030/000050265020251030ZI_2.csv
+    [4]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050265020251030/000050265020251030ZK_2.csv
+    [32]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050265020251030/BLOCK_REPORT.csv
+    [4]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050265020251030/CURRENT_BLOCK.csv
+    [4]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050265020251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050265020251030/CURRENT_KISYU.csv
+    [2]x[16] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050265020251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050265020251030/S_RATE_TOTAL.csv
+    [64]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050265020251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ SD/000050265020251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ SD/000050265020251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050265020251030/YUUGI_FILE.csv
+    [605]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050256020251030/000050256020251030ZA_2.csv
+    [582]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050256020251030/000050256020251030ZI_2.csv
+    [5]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050256020251030/000050256020251030ZK_2.csv
+    [50]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050256020251030/BLOCK_REPORT.csv
+    [5]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050256020251030/CURRENT_BLOCK.csv
+    [5]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050256020251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050256020251030/CURRENT_KISYU.csv
+    [2]x[16] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050256020251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050256020251030/S_RATE_TOTAL.csv
+    [80]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050256020251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ SD/000050256020251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ SD/000050256020251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050256020251030/YUUGI_FILE.csv
+    [582]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050233020251030/000050233020251030ZA_2.csv
+    [478]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050233020251030/000050233020251030ZI_2.csv
+    [3]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050233020251030/000050233020251030ZK_2.csv
+    [92]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050233020251030/BLOCK_REPORT.csv
+    [3]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050233020251030/CURRENT_BLOCK.csv
+    [3]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050233020251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050233020251030/CURRENT_KISYU.csv
+    [2]x[16] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050233020251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050233020251030/S_RATE_TOTAL.csv
+    [48]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050233020251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ SD/000050233020251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ SD/000050233020251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050233020251030/YUUGI_FILE.csv
+    [476]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050217020251030/000050217020251030ZA_2.csv
+    [520]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050217020251030/000050217020251030ZI_2.csv
+    [4]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050217020251030/000050217020251030ZK_2.csv
+    [71]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050217020251030/BLOCK_REPORT.csv
+    [4]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050217020251030/CURRENT_BLOCK.csv
+    [4]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050217020251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050217020251030/CURRENT_KISYU.csv
+    [2]x[16] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050217020251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050217020251030/S_RATE_TOTAL.csv
+    [64]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050217020251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ SD/000050217020251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ SD/000050217020251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050217020251030/YUUGI_FILE.csv
+    [520]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043520251030/000010043520251030TD_2.csv
+    [12]x[246] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043520251030/000010043520251030TP_2.csv
+    [12]x[162] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043520251030/000010043520251030TR_2.csv
+    [12]x[241] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043520251030/000010043520251030ZA_2.csv
+    [340]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043520251030/000010043520251030ZB_2.csv
+    [344]x[26] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043520251030/000010043520251030ZI_2.csv
+    [3]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043520251030/000010043520251030ZK_2.csv
+    [157]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043520251030/BLOCK_REPORT.csv
+    [3]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043520251030/CURRENT_BLOCK.csv
+    [3]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043520251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+❌ DK/000010043520251030/CURRENT_KISYU.csv
+    Cùng kích thước: [149]x[16]
+    Khác dữ liệu ở các cell
+    Các cell khác ví dụ:
+      機種コード                       機種名称                  賞球数1      
+       self    other              self            other self other
+9   20098.0  93115.0    ｅ東京リベンジャーズＧＦＥＣ        ｅブルーロックＭＺ  NaN   NaN
+10  93115.0  11958.0         ｅブルーロックＭＺ  ＰＣＹＢＯＲＧ００９ＶＳ３－Ｋ  NaN   NaN
+11  11958.0   6654.0   ＰＣＹＢＯＲＧ００９ＶＳ３－Ｋ   ＰＦシンフォギア黄金絶唱ＹＲ  NaN   NaN
+12   6654.0   8267.0    ＰＦシンフォギア黄金絶唱ＹＲ   ＰＡＦガンダムユニコーンｂＹ  NaN   NaN
+13   5482.0  58148.0  ＰＡＳＰ海物語ＩＮジャパン２ＲＡ    ｅ押忍！番長　漢の頂Ｌ０９  3.0   1.0
+✔ DK/000010043520251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043520251030/S_RATE_TOTAL.csv
+    [48]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043520251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ DK/000010043520251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ DK/000010043520251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043520251030/YUUGI_FILE.csv
+    [340]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050243020251030/000050243020251030ZA_2.csv
+    [512]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050243020251030/000050243020251030ZI_2.csv
+    [3]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050243020251030/000050243020251030ZK_2.csv
+    [86]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050243020251030/BLOCK_REPORT.csv
+    [3]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050243020251030/CURRENT_BLOCK.csv
+    [3]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050243020251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050243020251030/CURRENT_KISYU.csv
+    [2]x[16] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050243020251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050243020251030/S_RATE_TOTAL.csv
+    [48]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050243020251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ SD/000050243020251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ SD/000050243020251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050243020251030/YUUGI_FILE.csv
+    [512]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043720251030/000010043720251030TD_2.csv
+    [5]x[248] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043720251030/000010043720251030TP_2.csv
+    [5]x[162] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043720251030/000010043720251030TR_2.csv
+    [5]x[241] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043720251030/000010043720251030ZA_2.csv
+    [529]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043720251030/000010043720251030ZB_2.csv
+    [549]x[26] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043720251030/000010043720251030ZI_2.csv
+    [4]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043720251030/000010043720251030ZK_2.csv
+    [239]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043720251030/BLOCK_REPORT.csv
+    [0]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043720251030/CURRENT_BLOCK.csv
+    [4]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043720251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+❌ DK/000010043720251030/CURRENT_KISYU.csv
+    Cùng kích thước: [214]x[16]
+    Khác dữ liệu ở các cell
+    Các cell khác ví dụ:
+     機種コード                       機種名称                 機種グループコード       賞球数1      
+      self    other              self           other      self other self other
+0  14022.0  27058.0    Ｐシンデレラブレイド　ＪＱＸ   ＰＡアズールレーン７９Ｍ２       NaN   NaN  NaN   NaN
+1  15347.0  20099.0        ｅゴッドイーターＭＪ      Ｐ頭文字Ｄ２ＧＣＰＣ       NaN   NaN  NaN   NaN
+2  27058.0   6673.0     ＰＡアズールレーン７９Ｍ２  ＰＡガンダムユニコーン２ＡＲ       NaN   NaN  1.0   3.0
+3  11935.0  18577.0  Ｐ００９　ＣＹＢＯＲＧ　Ｎ３－Ｋ      Ｐ地獄少女覚醒ＦＨＺ       NaN   NaN  NaN   NaN
+4  14032.0  20098.0   Ｐとある魔術の禁書目録２ＪＭＺ  ｅ東京リベンジャーズＧＦＥＣ       NaN   NaN  NaN   NaN
+✔ DK/000010043720251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043720251030/S_RATE_TOTAL.csv
+    [64]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043720251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ DK/000010043720251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ DK/000010043720251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043720251030/YUUGI_FILE.csv
+    [529]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043620251030/000010043620251030TD_2.csv
+    [5]x[248] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043620251030/000010043620251030TP_2.csv
+    [5]x[162] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043620251030/000010043620251030TR_2.csv
+    [5]x[241] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043620251030/000010043620251030ZA_2.csv
+    [458]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043620251030/000010043620251030ZB_2.csv
+    [473]x[26] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043620251030/000010043620251030ZI_2.csv
+    [4]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043620251030/000010043620251030ZK_2.csv
+    [245]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043620251030/BLOCK_REPORT.csv
+    [0]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043620251030/CURRENT_BLOCK.csv
+    [4]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043620251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+❌ DK/000010043620251030/CURRENT_KISYU.csv
+    Cùng kích thước: [201]x[16]
+    Khác dữ liệu ở các cell
+    Các cell khác ví dụ:
+     機種コード                       機種名称                   機種グループコード       賞球数1      
+      self    other              self             other      self other self other
+0   8274.0  18570.0   Ｐゴジラ対エヴァンゲリオン２Ｒ     ＰＡ真・暴れん坊将軍ＦＷＺ       NaN   NaN  1.0   3.0
+1   6670.0  15334.0        ＰＦうたわれるものＺ      Ｐ激デジ真・牙狼ＲＢＹ４       NaN   NaN  NaN   NaN
+2   4287.0   3450.0     ｅ仮面ライダー電王ＫＬ１２  Ｐ中森明菜・歌姫伝説４ＫＤ－ＴＪ       NaN   NaN  1.0   2.0
+3  16406.0  20082.0       ＰＤＤ北斗の拳２Ｓ２Ａ    Ｐブラックラグーン４ＧＦＰＪ       NaN   NaN  2.0   1.0
+4  15351.0  11903.0  Ｐ世界でいちばん強くなりたいＭＱ       ＰＡ花の慶次～蓮Ｎ－Ｖ       NaN   NaN  NaN   NaN
+✔ DK/000010043620251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043620251030/S_RATE_TOTAL.csv
+    [64]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043620251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ DK/000010043620251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ DK/000010043620251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043620251030/YUUGI_FILE.csv
+    [458]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070320251030/000020070320251030TD_2.csv
+    [5]x[250] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070320251030/000020070320251030TP_2.csv
+    [5]x[162] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070320251030/000020070320251030TR_2.csv
+    [5]x[241] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070320251030/000020070320251030ZA_2.csv
+    [520]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070320251030/000020070320251030ZB_2.csv
+    [540]x[26] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070320251030/000020070320251030ZI_2.csv
+    [4]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070320251030/000020070320251030ZK_2.csv
+    [296]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070320251030/BLOCK_REPORT.csv
+    [0]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070320251030/CURRENT_BLOCK.csv
+    [4]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070320251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+❌ DK/000020070320251030/CURRENT_KISYU.csv
+    Cùng kích thước: [245]x[16]
+    Khác dữ liệu ở các cell
+    Các cell khác ví dụ:
+     機種コード                       機種名称                  機種グループコード       賞球数1      
+      self    other              self            other      self other self other
+2   7683.0   6668.0  ｅガールズ＆パンツァー３ＬＡＨ１   ＰＦ戦姫絶唱シンフォギア４Ｚ       NaN   NaN  NaN   NaN
+3   6668.0  46100.0    ＰＦ戦姫絶唱シンフォギア４Ｚ     Ｐギルティクラウン２ＭＥ       NaN   NaN  NaN   NaN
+4  46100.0  18570.0      Ｐギルティクラウン２ＭＥ    ＰＡ真・暴れん坊将軍ＦＷＺ       NaN   NaN  1.0   3.0
+5  18570.0   6673.0     ＰＡ真・暴れん坊将軍ＦＷＺ   ＰＡガンダムユニコーン２ＡＲ       NaN   NaN  NaN   NaN
+6   6673.0   9501.0    ＰＡガンダムユニコーン２ＡＲ  ＰモモキュンソードＧＣ２５０Ａ       NaN   NaN  3.0   1.0
+✔ DK/000020070320251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070320251030/S_RATE_TOTAL.csv
+    [64]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070320251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ DK/000020070320251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ DK/000020070320251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070320251030/YUUGI_FILE.csv
+    [520]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050244020251030/000050244020251030ZA_2.csv
+    [1100]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050244020251030/000050244020251030ZI_2.csv
+    [4]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050244020251030/000050244020251030ZK_2.csv
+    [115]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050244020251030/BLOCK_REPORT.csv
+    [4]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050244020251030/CURRENT_BLOCK.csv
+    [4]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050244020251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050244020251030/CURRENT_KISYU.csv
+    [2]x[16] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050244020251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050244020251030/S_RATE_TOTAL.csv
+    [64]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050244020251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ SD/000050244020251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ SD/000050244020251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050244020251030/YUUGI_FILE.csv
+    [1080]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050262020251030/000050262020251030ZA_2.csv
+    [559]x[156] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050262020251030/000050262020251030ZI_2.csv
+    [3]x[55] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050262020251030/000050262020251030ZK_2.csv
+    [190]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050262020251030/BLOCK_REPORT.csv
+    [3]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050262020251030/CURRENT_BLOCK.csv
+    [3]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050262020251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050262020251030/CURRENT_KISYU.csv
+    [2]x[16] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050262020251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050262020251030/S_RATE_TOTAL.csv
+    [48]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050262020251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ MA/000050262020251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ MA/000050262020251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050262020251030/YUUGI_FILE.csv
+    [547]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043420251030/000010043420251030TD_2.csv
+    [7]x[246] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043420251030/000010043420251030TP_2.csv
+    [7]x[162] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043420251030/000010043420251030TR_2.csv
+    [7]x[241] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043420251030/000010043420251030ZA_2.csv
+    [120]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043420251030/000010043420251030ZB_2.csv
+    [122]x[26] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043420251030/000010043420251030ZI_2.csv
+    [2]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043420251030/000010043420251030ZK_2.csv
+    [77]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043420251030/BLOCK_REPORT.csv
+    [2]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043420251030/CURRENT_BLOCK.csv
+    [2]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043420251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+❌ DK/000010043420251030/CURRENT_KISYU.csv
+    Cùng kích thước: [70]x[16]
+    Khác dữ liệu ở các cell
+    Các cell khác ví dụ:
+     機種コード                       機種名称                 
+      self    other              self            other
+1  14035.0  68024.0     Ｌゲゲゲの鬼太郎　覚醒ＪＣ       ＬヨシムネＳ　ＳＣ２
+2  58147.0  35013.0  Ｌスロット　ゾンビランドサガＡ１    Ｌスーパーブラックジャック
+3  68024.0  93105.0        ＬヨシムネＳ　ＳＣ２    Ｌかぐや様は告らせたいｊＡ
+4  35013.0  35011.0     Ｌスーパーブラックジャック  Ｌゴッドイーターリザレクション
+5  47101.0  37015.0   Ｌ　ＳＨＡＭＡＮＫＩＮＧ　ＳＳ          Ｌ麻雀物語Ｓ２
+✔ DK/000010043420251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043420251030/S_RATE_TOTAL.csv
+    [32]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043420251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ DK/000010043420251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ DK/000010043420251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000010043420251030/YUUGI_FILE.csv
+    [120]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ KD/000010043820251030/000010043820251030ZA_2.csv
+    [480]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ KD/000010043820251030/000010043820251030ZB_2.csv
+    [492]x[26] - Dữ liệu giống nhau hoàn toàn
+✔ KD/000010043820251030/000010043820251030ZI_2.csv
+    [3]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ KD/000010043820251030/000010043820251030ZK_2.csv
+    [228]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ KD/000010043820251030/BLOCK_REPORT.csv
+    [3]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ KD/000010043820251030/CURRENT_BLOCK.csv
+    [3]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ KD/000010043820251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+❌ KD/000010043820251030/CURRENT_KISYU.csv
+    Cùng kích thước: [196]x[16]
+    Khác dữ liệu ở các cell
+    Các cell khác ví dụ:
+     機種コード                       機種名称                   機種グループコード       賞球数1      
+      self    other              self             other      self other self other
+1   6650.0   8278.0       ＰＦからくりサーカスＹ    Ｐシン・エヴァンゲリオンＭＶ       NaN   NaN  NaN   NaN
+2   5480.0   1348.0   Ｐ　ＳＰ海物語ＩＮ沖縄５ＬＴＶ        ＰファインプレーＨ３       NaN   NaN  3.0   5.0
+3  24074.0  24072.0  Ｐ銀河鉄道９９９ＮＪＬ０ＹＵ１Ｙ   ＰＡ戦国乙女レジェンド８９ＧＯ       NaN   NaN  NaN   NaN
+4   8278.0  20099.0    Ｐシン・エヴァンゲリオンＭＶ        Ｐ頭文字Ｄ２ＧＣＰＣ       NaN   NaN  NaN   NaN
+5   1348.0   4299.0        ＰファインプレーＨ３  ｅ新・必殺仕置人超斬撃９９ＫＡ１       NaN   NaN  5.0   1.0
+✔ KD/000010043820251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ KD/000010043820251030/S_RATE_TOTAL.csv
+    [48]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ KD/000010043820251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ KD/000010043820251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ KD/000010043820251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ KD/000010043820251030/YUUGI_FILE.csv
+    [480]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050224020251030/000050224020251030ZA_2.csv
+    [478]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050224020251030/000050224020251030ZI_2.csv
+    [2]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050224020251030/000050224020251030ZK_2.csv
+    [175]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050224020251030/BLOCK_REPORT.csv
+    [2]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050224020251030/CURRENT_BLOCK.csv
+    [2]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050224020251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050224020251030/CURRENT_KISYU.csv
+    [2]x[16] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050224020251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050224020251030/S_RATE_TOTAL.csv
+    [32]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050224020251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ SD/000050224020251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ SD/000050224020251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050224020251030/YUUGI_FILE.csv
+    [478]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050230020251030/000050230020251030ZA_2.csv
+    [490]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050230020251030/000050230020251030ZI_2.csv
+    [3]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050230020251030/000050230020251030ZK_2.csv
+    [92]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050230020251030/BLOCK_REPORT.csv
+    [3]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050230020251030/CURRENT_BLOCK.csv
+    [3]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050230020251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050230020251030/CURRENT_KISYU.csv
+    [2]x[16] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050230020251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050230020251030/S_RATE_TOTAL.csv
+    [48]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050230020251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ SD/000050230020251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ SD/000050230020251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050230020251030/YUUGI_FILE.csv
+    [490]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050254020251030/000050254020251030ZA_2.csv
+    [502]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050254020251030/000050254020251030ZI_2.csv
+    [4]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050254020251030/000050254020251030ZK_2.csv
+    [67]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050254020251030/BLOCK_REPORT.csv
+    [4]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050254020251030/CURRENT_BLOCK.csv
+    [4]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050254020251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050254020251030/CURRENT_KISYU.csv
+    [2]x[16] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050254020251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050254020251030/S_RATE_TOTAL.csv
+    [64]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050254020251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ SD/000050254020251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ SD/000050254020251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050254020251030/YUUGI_FILE.csv
+    [502]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050242020251030/000050242020251030ZA_2.csv
+    [472]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050242020251030/000050242020251030ZI_2.csv
+    [3]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050242020251030/000050242020251030ZK_2.csv
+    [101]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050242020251030/BLOCK_REPORT.csv
+    [3]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050242020251030/CURRENT_BLOCK.csv
+    [3]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050242020251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050242020251030/CURRENT_KISYU.csv
+    [2]x[16] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050242020251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050242020251030/S_RATE_TOTAL.csv
+    [48]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050242020251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ SD/000050242020251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ SD/000050242020251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050242020251030/YUUGI_FILE.csv
+    [472]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070220251030/000020070220251030TD_2.csv
+    [5]x[246] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070220251030/000020070220251030TP_2.csv
+    [5]x[162] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070220251030/000020070220251030TR_2.csv
+    [5]x[241] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070220251030/000020070220251030ZA_2.csv
+    [511]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070220251030/000020070220251030ZB_2.csv
+    [531]x[26] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070220251030/000020070220251030ZI_2.csv
+    [4]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070220251030/000020070220251030ZK_2.csv
+    [274]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070220251030/BLOCK_REPORT.csv
+    [4]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070220251030/CURRENT_BLOCK.csv
+    [4]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070220251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+❌ DK/000020070220251030/CURRENT_KISYU.csv
+    Cùng kích thước: [231]x[16]
+    Khác dữ liệu ở các cell
+    Các cell khác ví dụ:
+     機種コード                      機種名称                   賞球数1      
+      self    other             self             other self other
+0  15336.0   4294.0     Ｐ牙狼ＭＵＳＥＵＭ－ＭＡ         ｅ乃木坂４６ⅡＫ４  NaN   NaN
+1  11939.0  93095.0    ｅ義風堂々！！３ＤＭ５－Ｓ      ＰフィーバークィーンⅡＶ  NaN   NaN
+2   2359.0  11919.0       ＰＡ満開昔ばなしＧＯ    ＰＡ野生の王国どらむＮ－Ｋ１  NaN   NaN
+3  46109.0   7674.0      ｅシャーマンキングＬＢ  ＰＡルパンザファースト不二子ＧＯ  NaN   NaN
+4  46098.0   6620.0  Ｐハイスクール・フリート２ＭＨ      ＰＡフィーバー真花月２Ｙ  3.0   1.0
+✔ DK/000020070220251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070220251030/S_RATE_TOTAL.csv
+    [64]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070220251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ DK/000020070220251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ DK/000020070220251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ DK/000020070220251030/YUUGI_FILE.csv
+    [511]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050234020251030/000050234020251030ZA_2.csv
+    [533]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050234020251030/000050234020251030ZI_2.csv
+    [5]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050234020251030/000050234020251030ZK_2.csv
+    [154]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050234020251030/BLOCK_REPORT.csv
+    [5]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050234020251030/CURRENT_BLOCK.csv
+    [5]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050234020251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050234020251030/CURRENT_KISYU.csv
+    [2]x[16] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050234020251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050234020251030/S_RATE_TOTAL.csv
+    [80]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050234020251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ SD/000050234020251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ SD/000050234020251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050234020251030/YUUGI_FILE.csv
+    [512]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050258020251030/000050258020251030ZA_2.csv
+    [615]x[156] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050258020251030/000050258020251030ZI_2.csv
+    [2]x[55] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050258020251030/000050258020251030ZK_2.csv
+    [204]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050258020251030/BLOCK_REPORT.csv
+    [2]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050258020251030/CURRENT_BLOCK.csv
+    [2]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050258020251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050258020251030/CURRENT_KISYU.csv
+    [2]x[16] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050258020251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050258020251030/S_RATE_TOTAL.csv
+    [32]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050258020251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ MA/000050258020251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ MA/000050258020251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ MA/000050258020251030/YUUGI_FILE.csv
+    [594]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050272020251030/000050272020251030ZA_2.csv
+    [663]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050272020251030/000050272020251030ZI_2.csv
+    [4]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050272020251030/000050272020251030ZK_2.csv
+    [222]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050272020251030/BLOCK_REPORT.csv
+    [4]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050272020251030/CURRENT_BLOCK.csv
+    [4]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050272020251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050272020251030/CURRENT_KISYU.csv
+    [2]x[16] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050272020251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050272020251030/S_RATE_TOTAL.csv
+    [64]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050272020251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ SD/000050272020251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ SD/000050272020251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050272020251030/YUUGI_FILE.csv
+    [652]x[98] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050248020251030/000050248020251030ZA_2.csv
+    [560]x[159] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050248020251030/000050248020251030ZI_2.csv
+    [4]x[62] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050248020251030/000050248020251030ZK_2.csv
+    [119]x[30] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050248020251030/BLOCK_REPORT.csv
+    [4]x[20] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050248020251030/CURRENT_BLOCK.csv
+    [4]x[7] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050248020251030/CURRENT_COUNT.csv
+    [30]x[9] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050248020251030/CURRENT_KISYU.csv
+    [2]x[16] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050248020251030/NIPPOU_FILE.csv
+    [30]x[63] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050248020251030/S_RATE_TOTAL.csv
+    [64]x[4] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050248020251030/TEMPO_MODE.csv
+    [1]x[12] - Bỏ qua vì chỉ khác timestamp (作成日時)
+✔ SD/000050248020251030/TEMPO_REPORT.csv
+    [1]x[21] - Bỏ qua vì chỉ khác timestamp (データ更新時刻)
+✔ SD/000050248020251030/TEMPO_SYSTEM_MODE.csv
+    [1]x[5] - Dữ liệu giống nhau hoàn toàn
+✔ SD/000050248020251030/YUUGI_FILE.csv
+    [560]x[98] - Dữ liệu giống nhau hoàn toàn
