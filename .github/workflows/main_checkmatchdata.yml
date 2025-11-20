@@ -18,7 +18,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write #This is required for actions/checkout
+      contents: read #This is required for actions/checkout
 
     steps:
       - name: Checkout repository
@@ -74,3 +74,4 @@ jobs:
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
 
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D99EAFC103C44C358F680ACA63A312A5 }}
+
