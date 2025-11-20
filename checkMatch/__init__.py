@@ -15,7 +15,7 @@ def log(line: str):
 def read_csv_with_jp_encoding(blob_client):
     stream = blob_client.download_blob().readall()
 
-    for enc in ["shift_jis", "cp932", "utf-8"]:
+    for enc in ["shift_jis", "cp932"]:
         try:
             text = stream.decode(enc)
             df = pd.read_csv(StringIO(text))
@@ -109,7 +109,9 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
                         log("    Không thể compare dataframe")
 
     except Exception as e:
-        log(f"❌ Lỗi tổng: {e}")
+        err_text = f"❌ Lỗi tổng: {e}"
+        output_lines.append(err_text)
+        return func.HttpResponse("\n".join(output_lines), status_code=500, mimetype="text/plain")
 
     # Trả kết quả HTTP
     result_text = "\n".join(output_lines)
