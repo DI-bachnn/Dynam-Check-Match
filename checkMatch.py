@@ -1,10 +1,6 @@
 from azure.storage.blob import BlobServiceClient
-from dotenv import load_dotenv
-import os
 from io import StringIO
 import pandas as pd
-
-load_dotenv()
 
 output_lines = [] 
 
@@ -24,7 +20,7 @@ def read_csv_with_jp_encoding(blob_client):
             pass
     raise Exception("Không đọc được CSV với các encoding Nhật (shift_jis, cp932, utf-8)")
 
-connection_string = os.getenv("AZURE_BLOB_CONNECTION_STRING")
+connection_string = "DefaultEndpointsProtocol=https;AccountName=dwhdeast02strg001dev;AccountKey=maM+BH0McLmG8xcEUe23CrkS95tkaj5gcRAbfOUZ7rDQQbsvSiJPVLA3Alv2tlyJAlUnx0kATgjJAThrKYNusw==;EndpointSuffix=core.windows.net"
 
 container_name = "external" 
 blob_service_client = BlobServiceClient.from_connection_string(connection_string)
