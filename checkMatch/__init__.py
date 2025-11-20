@@ -109,7 +109,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
                         log("    Không thể compare dataframe")
 
     except Exception as e:
-        err_text = f"❌ Lỗi tổng: {e}"
+        err_text = f"❌ Lỗi tổng: {e}\n{traceback.format_exc()}"
         output_lines.append(err_text)
         return func.HttpResponse("\n".join(output_lines), status_code=500, mimetype="text/plain")
 
