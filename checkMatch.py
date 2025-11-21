@@ -18,7 +18,7 @@ def read_csv_with_jp_encoding(blob_client):
             return df
         except Exception:
             pass
-    raise Exception("Không đọc được CSV với các encoding Nhật (shift_jis, cp932, utf-8)")
+    raise Exception("Không đọc được CSV với các encoding Nhật (shift_jis, cp932)")
 
 connection_string = "DefaultEndpointsProtocol=https;AccountName=dwhdeast02strg001dev;AccountKey=maM+BH0McLmG8xcEUe23CrkS95tkaj5gcRAbfOUZ7rDQQbsvSiJPVLA3Alv2tlyJAlUnx0kATgjJAThrKYNusw==;EndpointSuffix=core.windows.net"
 
