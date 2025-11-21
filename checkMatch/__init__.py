@@ -20,7 +20,7 @@ def read_csv_with_jp_encoding(blob_client):
 # ==============================
 # Hàm chính HTTP trigger
 # ==============================
-def main(req: func.HttpRequest, context: func.Context) -> func.HttpResponse:
+def checkMatch(req: func.HttpRequest, context: func.Context) -> func.HttpResponse:
     output_lines = []
     logger = context.logger
 
