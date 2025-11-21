@@ -18,7 +18,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: read #This is required for actions/checkout
+      contents: write #This is required for actions/checkout
 
     steps:
       - name: Checkout repository
@@ -72,4 +72,5 @@ jobs:
           app-name: 'checkMatch-premium'
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_34A132E979E54B12BE51EADFF264D9F9 }}
