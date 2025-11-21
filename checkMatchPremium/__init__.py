@@ -2,6 +2,7 @@ import azure.functions as func
 from azure.storage.blob import BlobServiceClient
 from io import StringIO
 import pandas as pd
+import logging
 
 def read_csv_with_jp_encoding(blob_client):
     stream = blob_client.download_blob().readall()
@@ -14,12 +15,12 @@ def read_csv_with_jp_encoding(blob_client):
             pass
     raise Exception("Cannot read CSV with Japanese encodings (shift_jis, cp932)")
 
-def checkMatchPremiun(req: func.HttpRequest, context: func.Context) -> func.HttpResponse:
+def main(req: func.HttpRequest, context: func.Context) -> func.HttpResponse:
+    logging.info("checkMatchPremium called")
+    
     output_lines = []
-    logger = context.logger
 
     def log(line: str):
-        print(line, flush=True)    
         output_lines.append(line)
 
     try:
