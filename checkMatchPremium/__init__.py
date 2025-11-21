@@ -14,7 +14,7 @@ def read_csv_with_jp_encoding(blob_client):
             pass
     raise Exception("Cannot read CSV with Japanese encodings (shift_jis, cp932)")
 
-def checkMatchData(req: func.HttpRequest, context: func.Context) -> func.HttpResponse:
+def checkMatchPremiun(req: func.HttpRequest, context: func.Context) -> func.HttpResponse:
     output_lines = []
     logger = context.logger
 
