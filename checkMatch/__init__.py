@@ -3,9 +3,6 @@ from azure.storage.blob import BlobServiceClient
 from io import StringIO
 import pandas as pd
 
-# ==============================
-# Hàm tiện ích
-# ==============================
 def read_csv_with_jp_encoding(blob_client):
     stream = blob_client.download_blob().readall()
     for enc in ["shift_jis", "cp932"]:
@@ -15,21 +12,17 @@ def read_csv_with_jp_encoding(blob_client):
             return df
         except Exception:
             pass
-    raise Exception("Không đọc được CSV với các encoding Nhật (shift_jis, cp932, utf-8)")
+    raise Exception("Cannot read CSV with Japanese encodings (shift_jis, cp932)")
 
-# ==============================
-# Hàm chính HTTP trigger
-# ==============================
 def checkMatchData(req: func.HttpRequest, context: func.Context) -> func.HttpResponse:
     output_lines = []
     logger = context.logger
 
     def log(line: str):
-        print(line, flush=True)     # <-- log ra console
+        print(line, flush=True)    
         output_lines.append(line)
 
     try:
-        # ======= Cấu hình Blob =======
         connection_string = "DefaultEndpointsProtocol=https;AccountName=dwhdeast02strg001dev;AccountKey=maM+BH0McLmG8xcEUe23CrkS95tkaj5gcRAbfOUZ7rDQQbsvSiJPVLA3Alv2tlyJAlUnx0kATgjJAThrKYNusw==;EndpointSuffix=core.windows.net"
         container_name = "external" 
         blob_service_client = BlobServiceClient.from_connection_string(connection_string)
@@ -66,7 +59,7 @@ def checkMatchData(req: func.HttpRequest, context: func.Context) -> func.HttpRes
 
                 except Exception as e:
                     log(f"❌ {file_path_display}")
-                    log(f"    Không đọc được file: {e}")
+                    log(f"    Cannot read file: {e}")
                     continue
 
                 rows_none, cols_none = df_none.shape
@@ -74,7 +67,7 @@ def checkMatchData(req: func.HttpRequest, context: func.Context) -> func.HttpRes
 
                 if rows_none == rows_second and cols_none == cols_second and df_none.equals(df_second):
                     log(f"✔ {file_path_display}")
-                    log(f"    [{rows_none}]x[{cols_none}] - Dữ liệu giống nhau hoàn toàn")
+                    log(f"    [{rows_none}]x[{cols_none}] - Data matches exactly")
                 else:
                     TIMESTAMP_COLUMNS = ["作成日時", "データ更新時刻"]
                     try:
@@ -84,31 +77,30 @@ def checkMatchData(req: func.HttpRequest, context: func.Context) -> func.HttpRes
                             and set(diff.columns.get_level_values(0)) <= set(TIMESTAMP_COLUMNS)
                         ):
                             log(f"✔ {file_path_display}")
-                            log(f"    [{rows_none}]x[{cols_none}] - Bỏ qua vì chỉ khác timestamp ({', '.join(set(diff.columns.get_level_values(0)))})")
+                            log(f"    [{rows_none}]x[{cols_none}] - Ignored because only timestamp differs ({', '.join(set(diff.columns.get_level_values(0)))})")
                             continue
                     except:
                         pass
 
                     log(f"❌ {file_path_display}")
                     if rows_none != rows_second or cols_none != cols_second:
-                        log(f"    Kích thước khác: none=[{rows_none}x{cols_none}], second=[{rows_second}x{cols_second}]")
+                        log(f"    Different dimensions: none=[{rows_none}x{cols_none}], second=[{rows_second}x{cols_second}]")
                     else:
-                        log(f"    Cùng kích thước: [{rows_none}]x[{cols_none}]")
+                        log(f"    Same dimensions: [{rows_none}]x[{cols_none}]")
 
-                    log("    Khác dữ liệu ở các cell")
+                    log("    Cell values differ")
                     try:
                         diff = df_none.compare(df_second)
                         num_diff_rows = diff.index.nunique()
-                        log(f"    Tổng số dòng khác nhau: {num_diff_rows}")
-                        log("    Các cell khác ví dụ:")
+                        log(f"    Total different rows: {num_diff_rows}")
+                        log("    Example of different cells:")
                         log(str(diff.head()))
                     except:
-                        log("    Không thể compare dataframe")
+                        log("    Cannot compare dataframes")
 
     except Exception as e:
-        err_text = f"❌ Lỗi tổng: {e}"
+        err_text = f"❌ Overall error: {e}"
         log(err_text)
         return func.HttpResponse("\n".join(output_lines), status_code=500, mimetype="text/plain")
 
-    # Trả kết quả HTTP
     return func.HttpResponse("\n".join(output_lines), mimetype="text/plain")
