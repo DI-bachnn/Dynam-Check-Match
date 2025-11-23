@@ -1,7 +1,7 @@
 name: Build Docker Image (Cloud)
 
 on:
-  workflow_dispatch:  # Cho phép bấm nút Run trên GitHub
+  workflow_dispatch: 
   push:
     branches:
       - DI-bachnn-test
