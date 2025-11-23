@@ -1,5 +1,4 @@
 python-dotenv
 pandas
 azure-functions
-logging
 azure-storage-blob
