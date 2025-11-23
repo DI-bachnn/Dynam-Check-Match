@@ -24,13 +24,10 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GHCR_TOKEN }} 
 
-      - name: Build Docker image
+      - name: Build and push Docker image
         run: |
           IMAGE_NAME=ghcr.io/di-bachnn/dynam-check-match/dynam_function_app:latest
           docker build -t $IMAGE_NAME .
-
-      - name: Push Docker image
-        run: |
           docker push $IMAGE_NAME
 
   deploy:
