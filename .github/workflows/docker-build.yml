@@ -26,6 +26,6 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          IMAGE_NAME=ghcr.io/dynam_check_match/dynam_function_app:latest
+          IMAGE_NAME=ghcr.io/di-bachnn/dynam_check_match/dynam_function_app:latest
           docker build -t $IMAGE_NAME .
           docker push $IMAGE_NAME
