@@ -4,6 +4,7 @@ from io import StringIO
 import pandas as pd
 import logging
 
+
 def read_csv_with_jp_encoding(blob_client):
     stream = blob_client.download_blob().readall()
     for enc in ["shift_jis", "cp932"]:
