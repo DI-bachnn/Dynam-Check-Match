@@ -1,10 +1,10 @@
 name: Build and deploy Docker Image to Azure Function App - check-match
 
 on:
-  push:
-    branches:
-      - DI-bachnn-test
-  workflow_dispatch:
+  workflow_run:
+    workflows: ["Build and Push Docker Image to GitHub Container Registry"]
+    types:
+      - completed
 
 jobs:
   build-and-push:

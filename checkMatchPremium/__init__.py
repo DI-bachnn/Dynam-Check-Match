@@ -64,10 +64,13 @@ def main(req: func.HttpRequest, context: func.Context) -> func.HttpResponse:
                     log(f"    Cannot read file: {e}")
                     continue
 
-                rows_none, cols_none = df_none.shape
-                rows_second, cols_second = df_second.shape
+                df_none_sorted = df_none.sort_values(by=list(df_none.columns)).reset_index(drop=True)
+                df_second_sorted = df_second.sort_values(by=list(df_second.columns)).reset_index(drop=True)
 
-                if rows_none == rows_second and cols_none == cols_second and df_none.equals(df_second):
+                rows_none, cols_none = df_none_sorted.shape
+                rows_second, cols_second = df_second_sorted.shape
+
+                if rows_none == rows_second and cols_none == cols_second and df_none_sorted.equals(df_second_sorted):
                     log(f"✔ {file_path_display}")
                     log(f"    [{rows_none}]x[{cols_none}] - Data matches exactly")
                 else:
