@@ -99,7 +99,9 @@ def main(req: func.HttpRequest, context: func.Context) -> func.HttpResponse:
                         log(str(diff.head()))
                     except:
                         log("    Cannot compare dataframes")
-
+        result_blob_path = "HC連携/benchmark/result.txt"
+        blob_client = container_client.get_blob_client(result_blob_path)
+        blob_client.upload_blob("\n".join(output_lines), overwrite=True)
     except Exception as e:
         err_text = f"❌ Overall error: {e}"
         log(err_text)
