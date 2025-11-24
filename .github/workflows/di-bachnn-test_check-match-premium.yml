@@ -24,17 +24,14 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GHCR_TOKEN }}
 
-      - name: Set IMAGE_NAME
-        run: echo "IMAGE_NAME=ghcr.io/di-bachnn/dynam_check_match/checkmatch-image:${GITHUB_SHA::7}" >> $GITHUB_ENV
-
       - name: Build Docker image
         run: |
-          IMAGE_NAME=ghcr.io/di-bachnn/dynam_check_match/dynam_function_app:latest
+          IMAGE_NAME=ghcr.io/di-bachnn/dynam_check_match/dynam_function_app:v1.0.0
           docker build -t $IMAGE_NAME .
 
       - name: Push Docker image
         run: |
-          IMAGE_NAME=ghcr.io/di-bachnn/dynam_check_match/dynam_function_app:latest
+          IMAGE_NAME=ghcr.io/di-bachnn/dynam_check_match/dynam_function_app:v1.0.0
           docker push $IMAGE_NAME
 
       - name: Deploy Docker image to Azure Function
