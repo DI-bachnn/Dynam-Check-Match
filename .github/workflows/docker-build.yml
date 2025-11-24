@@ -29,3 +29,4 @@ jobs:
           IMAGE_NAME=ghcr.io/di-bachnn/dynam_check_match/dynam_function_app:latest
           docker build -t $IMAGE_NAME .
           docker push $IMAGE_NAME
+          
