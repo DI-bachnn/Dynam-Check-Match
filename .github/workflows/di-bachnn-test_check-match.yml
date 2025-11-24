@@ -35,7 +35,7 @@ jobs:
           docker push $IMAGE_NAME
 
       - name: Deploy Docker image to Azure Function
-        uses: Azure/functions-action@v2
+        uses: Azure/functions-action@v1
         with:
           app-name: 'check-match'
           slot-name: 'Production'
