@@ -62,7 +62,11 @@ def checkMatch20251030(req: func.HttpRequest, context: func.Context) -> func.Htt
                 rows_none, cols_none = df_none_sorted.shape
                 rows_second, cols_second = df_second_sorted.shape
 
+                # rows_none, cols_none = df_none.shape
+                # rows_second, cols_second = df_second.shape
+
                 if rows_none == rows_second and cols_none == cols_second and df_none_sorted.equals(df_second_sorted):
+                # if rows_none == rows_second and cols_none == cols_second and df_none.equals(df_second):
                     log(f"✔ {file_path_display}")
                     log(f"    [{rows_none}]x[{cols_none}] - Data matches exactly")
                 else:
