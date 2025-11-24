@@ -26,18 +26,18 @@ jobs:
 
       - name: Build Docker image
         run: |
-          IMAGE_NAME=ghcr.io/di-bachnn/dynam_check_match/dynam_function_app:v1.0.3
+          IMAGE_NAME=ghcr.io/di-bachnn/dynam_check_match/dynam_function_app:latest
           docker build -t $IMAGE_NAME .
 
       - name: Push Docker image
         run: |
-          IMAGE_NAME=ghcr.io/di-bachnn/dynam_check_match/dynam_function_app:v1.0.3
+          IMAGE_NAME=ghcr.io/di-bachnn/dynam_check_match/dynam_function_app:latest
           docker push $IMAGE_NAME
 
       - name: Deploy Docker image to Azure Function
-        uses: Azure/functions-action@v2
+        uses: Azure/functions-action@v1
         with:
-          app-name: 'check-match'
+          app-name: 'check-match-premium'
           slot-name: 'Production'
-          images: 'ghcr.io/di-bachnn/dynam_check_match/dynam_function_app:v1.0.3'
+          images: 'ghcr.io/di-bachnn/dynam_check_match/dynam_function_app:latest'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FA522D1E46474777B6BEF07D9512AE18}}
