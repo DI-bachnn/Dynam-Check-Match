@@ -109,11 +109,6 @@ def main(req: func.HttpRequest, context: func.Context) -> func.HttpResponse:
         blob_client.upload_blob("\n".join(output_lines), overwrite=True)
         print("✅ Result uploaded to blob:", result_blob_path)
 
-        local_file = f"check-match-{day}.txt"
-        with open(local_file, "w", encoding="utf-8") as f:
-            f.write("\n".join(output_lines))
-        print("✅ Result saved locally at:", local_file)
-
     except Exception as e:
         err_text = f"❌ Overall error: {e}"
         log(err_text)
