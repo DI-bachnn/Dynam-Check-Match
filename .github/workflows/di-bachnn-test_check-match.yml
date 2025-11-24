@@ -6,44 +6,44 @@ on:
       - DI-bachnn-test
   workflow_dispatch:
 
+env:
+  IMAGE_NAME: ghcr.io/di-bachnn/dynam_check_match/checkmatch-image:latest
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout code
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2️⃣ Setup Docker Buildx
+      # Enable Docker Buildx
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v3
 
-      # 3️⃣ Login to GitHub Container Registry
+      # Login to GitHub Container Registry
       - name: Log in to GHCR
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GHCR_TOKEN }}
 
-      # 4️⃣ Build Docker image
+      # Build Docker image
       - name: Build Docker image
         run: |
-          IMAGE_NAME=ghcr.io/di-bachnn/dynam_check_match/dynam_function_app:latest
           docker build -t $IMAGE_NAME .
 
-      # 5️⃣ Push Docker image to GHCR
+      # Push Docker image to GHCR
       - name: Push Docker image
         run: |
-          IMAGE_NAME=ghcr.io/di-bachnn/dynam_check_match/dynam_function_app:latest
           docker push $IMAGE_NAME
 
-      # 6️⃣ Deploy Docker image to Azure Function App
+      # Deploy to Azure Function App (Docker)
       - name: Deploy Docker image to Azure Function
         uses: Azure/functions-action@v2
         with:
           app-name: 'check-match'
           slot-name: 'Production'
-          images: 'ghcr.io/di-bachnn/dynam_check_match/dynam_function_app:latest'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8C1241D74FCC445DBD63081033742609 }}
+          images: ${{ env.IMAGE_NAME }}

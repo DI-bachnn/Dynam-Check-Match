@@ -1,20 +1,14 @@
-# Sử dụng Python nhẹ làm base image
+# 1. Python base image (ổn định)
 FROM python:3.10-slim
 
-# Thiết lập thư mục làm việc trong container
+# 2. Tạo thư mục ứng dụng
 WORKDIR /app
 
-# Copy file requirements.txt (chứa các package cần cài)
-COPY requirements.txt .
+# 3. Copy file requirements trước (tối ưu cache)
+COPY requirements.txt /app/
 
-# Cài các package trong requirements.txt
+# 4. Cài dependency
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy toàn bộ code của bạn vào container
-COPY . .
-
-# Expose port (chỉ cần nếu test local)
-EXPOSE 80
-
-# Lệnh chạy Azure Function
-CMD ["func", "start", "--python"]
+# 5. Copy toàn bộ source code vào image
+COPY . /app

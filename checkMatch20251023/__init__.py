@@ -4,6 +4,7 @@ from io import StringIO
 import pandas as pd
 import logging
 
+day = "20251030"
 
 def read_csv_with_jp_encoding(blob_client):
     stream = blob_client.download_blob().readall()
@@ -30,8 +31,8 @@ def main(req: func.HttpRequest, context: func.Context) -> func.HttpResponse:
         blob_service_client = BlobServiceClient.from_connection_string(connection_string)
         container_client = blob_service_client.get_container_client(container_name)
 
-        folder_none = "HC連携/benchmark/none/20251030"
-        folder_second_try = "HC連携/benchmark/second_try/20251030"
+        folder_none = f"HC連携/benchmark/none/{day}"
+        folder_second_try = f"HC連携/benchmark/second_try/{day}"
 
         blobs_none = list(container_client.list_blobs(name_starts_with=folder_none))
 
@@ -102,10 +103,17 @@ def main(req: func.HttpRequest, context: func.Context) -> func.HttpResponse:
                         log(str(diff.head()))
                     except:
                         log("    Cannot compare dataframes")
-        result_blob_path = "HC連携/benchmark/result.txt"
+        
+        result_blob_path = f"HC連携/benchmark/check-match-{day}.txt"
         blob_client = container_client.get_blob_client(result_blob_path)
         blob_client.upload_blob("\n".join(output_lines), overwrite=True)
-        
+        print("✅ Result uploaded to blob:", result_blob_path)
+
+        local_file = f"check-match-{day}.txt"
+        with open(local_file, "w", encoding="utf-8") as f:
+            f.write("\n".join(output_lines))
+        print("✅ Result saved locally at:", local_file)
+
     except Exception as e:
         err_text = f"❌ Overall error: {e}"
         log(err_text)
