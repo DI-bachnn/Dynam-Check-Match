@@ -17,6 +17,9 @@ import math
 from decimal import Decimal, ROUND_HALF_UP
 from enum import Enum 
 from azure.storage.filedatalake import DataLakeServiceClient
+import pyodbc
+from uuid import uuid4
+from zoneinfo import ZoneInfo
 
 app = func.FunctionApp()
 
@@ -601,250 +604,24 @@ def phase1_sd_hc_data_convert(req: func.HttpRequest) -> func.HttpResponse:
 def phase1_ma_hc_data_convert(req: func.HttpRequest) -> func.HttpResponse:
     try:
         req_body = req.get_json()
-        container_name = req_body.get("container_name", "external")
-        input_file_xlsx = req_body.get("input_file_xlsx")
-        input_sheet_name = req_body.get("input_sheet_name")
-        input_folder_path = req_body.get("input_folder_path")
-        output_folder_path_today = req_body.get("output_folder_path_today")
-        output_folder_path_past = req_body.get("output_folder_path_past")
-        input_day = req_body.get("input_day")
 
-        if not input_file_xlsx or not input_folder_path or not output_folder_path_today or not output_folder_path_past:
-            return func.HttpResponse(
-                json.dumps({"error": "input_file_xlsx, input_folder_path, output_folder_path_today, and output_folder_path_past are required"}),
-                status_code=400,
-                mimetype="application/json"
-            )
-        
-        connection_string = os.environ.get("AZURE_STORAGE_CONNECTION_STRING")
-        blob_service = BlobServiceClient.from_connection_string(connection_string)
-
-        blob_client_xlsx = blob_service.get_blob_client(container=container_name, blob=input_file_xlsx)
-        xlsx_data = blob_client_xlsx.download_blob().readall()
-        df_xlsx = pd.read_excel(
-            BytesIO(xlsx_data),
-            sheet_name=input_sheet_name,
-            header=None,
-            dtype=str
-        )
-
-        if df_xlsx.empty:
-            return func.HttpResponse(
-                json.dumps({"error": "XLSX sheet is empty"}),
-                status_code=400,
-                mimetype="application/json"
-            )
-        
-        xlsx_patterns = set(
-            df_xlsx.iloc[:, 0]
-            .dropna()
-            .astype(str)
-            .str.strip()
-            .loc[lambda x: x != ""]
-        )
-        
-        container_client = blob_service.get_container_client(container=container_name)
-        
-        folder_prefix = input_folder_path.strip("/")
-        if folder_prefix and not folder_prefix.endswith("/"):
-            folder_prefix += "/"
-        
-        blobs = container_client.list_blobs(name_starts_with=folder_prefix)
-        
-        folders = set()
-        for blob in blobs:
-            blob_path = blob.name[len(folder_prefix):]
-            if "/" in blob_path:
-                folder_name = blob_path.split("/")[0]
-                folders.add(folder_name)
-        
-        filtered_folders = [f for f in folders if f in xlsx_patterns]
-        filtered_folders.sort()
-        
-        folder_files_mapping = {}
-        operation_logs = [] 
-        
-        if input_day:
-            file_types = ["ZA.csv", "ZI.csv", "ZK.csv"]
-            
-            for folder in filtered_folders:
-                folder_path = f"{folder_prefix}{folder}/"
-                found_files = []
-                
-                blobs_in_folder = container_client.list_blobs(name_starts_with=folder_path)
-                
-                for blob in blobs_in_folder:
-                    blob_name = blob.name.split("/")[-1]
-                    if (len(blob_name) >= 15 and 
-                        blob_name.startswith("01") and 
-                        blob_name[2:10].isdigit() and 
-                        any(blob_name.endswith(ft) for ft in file_types)):
-                        found_files.append(blob_name)
-                
-                if found_files:
-                    folder_files_mapping[folder] = {
-                        "files": sorted(found_files),
-                        "validated_files": [],
-                        "processed_files": []
-                    }
-                    
-                    try:
-                        corp, store = folder.split("_", 1)
-                    except ValueError:
-                        error_msg = f"✗ Invalid folder format (expected corp_store): {folder}"
-                        logging.error(error_msg)
-                        operation_logs.append(error_msg)
-                        continue
-                    
-                    for file_name in found_files:
-                        file_path = f"{folder_path}{file_name}"
-                        try:
-                            # df_csv = read_csv_from_blob(container_client, file_path)
-                            blob_client = container_client.get_blob_client(file_path)
-                            blob_data = blob_client.download_blob().readall()
-
-                            df_csv = None
-                            for encoding in ['utf-8', 'cp932', 'shift_jis']:
-                                try:
-                                    csv_string = blob_data.decode(encoding)
-                                    df_csv = pd.read_csv(
-                                        io.StringIO(csv_string),
-                                        header=None,    
-                                        dtype=object
-                                    )
-                                    break
-                                except UnicodeDecodeError:
-                                    continue
-                            name = file_name[-6:-4]
-                            file_type = name + "_MA"
-                            schema_columns = CSV_SCHEMAS.get(file_type, [])
-
-                            if schema_columns and df_csv.shape[1] == len(schema_columns):
-                                df_csv.columns = schema_columns
-                            else:
-                                raise ValueError(
-                                    f"Column count mismatch: csv={df_csv.shape[1]}, schema={len(schema_columns)} ({file_type})"
-                                )
-                            
-                            if '年月日' in df_csv.columns:
-                                csv_day = df_csv['年月日'].iloc[0] if len(df_csv) > 0 else None
-                                csv_day_str = str(csv_day).strip() if csv_day is not None else ""
-                                
-                                file_type = file_name[-6:-4] + "_MA"
-                                name = file_name[-6:-4]
-
-                                schema_columns = CSV_SCHEMAS.get(file_type, [])
-                                
-                                if schema_columns:
-                                    df_output = pd.DataFrame()
-
-                                    for col in schema_columns:
-                                        if col in df_csv.columns:
-                                            df_output[col] = df_csv[col]
-                                        else:
-                                            df_output[col] = ''
-
-                                    df_csv = df_output
-                                
-                                df_csv.insert(0, '会社コード', corp)
-                                df_csv.insert(1, '店舗コード', store)
-                                
-                                if csv_day_str == input_day:
-                                    output_folder = output_folder_path_today
-                                    match_status = True
-                                else:
-                                    output_folder = output_folder_path_past
-                                    match_status = False
-                                
-                                output_filename = f"{corp}{store}{csv_day_str}{name}_2.csv"
-                                output_folder_structured = f"{output_folder.strip('/')}/{corp}{store}{csv_day_str}/"
-                                output_file_path = f"{output_folder_structured}{output_filename}"
-                                
-                                try:
-                                    csv_string = df_csv.to_csv(index=False)
-                                    try:
-                                        csv_bytes = csv_string.encode('shift_jis')
-                                    except UnicodeEncodeError:
-                                        csv_bytes = csv_string.encode('cp932', errors='replace')
-                                    
-                                    blob_client_out = container_client.get_blob_client(output_file_path)
-                                    blob_client_out.upload_blob(csv_bytes, overwrite=True)
-                                    
-                                    folder_files_mapping[folder]["validated_files"].append({
-                                        "file_name": file_name,
-                                        "date_match": match_status,
-                                        "csv_day": csv_day_str
-                                    })
-                                    
-                                    folder_files_mapping[folder]["processed_files"].append({
-                                        "original_file": file_name,
-                                        "output_file": output_filename,
-                                        "output_path": output_file_path,
-                                        "output_folder": "today" if match_status else "past"
-                                    })
-                                    
-                                    if match_status:
-                                        log_msg = f"✓ Folder: {folder}, File: {file_name}, Day: {csv_day_str} (matches {input_day}) → saved to output_folder_today"
-                                        logging.info(log_msg)
-                                        operation_logs.append(log_msg)
-                                    else:
-                                        log_msg = f"✗ Folder: {folder}, File: {file_name}, Day: {csv_day_str} (expected {input_day}) → saved to output_folder_past"
-                                        logging.info(log_msg)
-                                        operation_logs.append(log_msg)
-                                        
-                                except Exception as write_error:
-                                    folder_files_mapping[folder]["validated_files"].append({
-                                        "file_name": file_name,
-                                        "error": f"Failed to write output: {str(write_error)}"
-                                    })
-                                    error_msg = f"✗ Error writing file {file_name} in {folder}: {str(write_error)}"
-                                    logging.error(error_msg)
-                                    operation_logs.append(error_msg)
-                            else:
-                                error_msg = f"✗ Folder: {folder}, File: {file_name} - 年月日 column not found"
-                                logging.warning(error_msg)
-                                operation_logs.append(error_msg)
-                                folder_files_mapping[folder]["validated_files"].append({
-                                    "file_name": file_name,
-                                    "date_match": False,
-                                    "error": "年月日 column not found"
-                                })
-                        except Exception as e:
-                            error_msg = f"✗ Error reading file {file_name} in {folder}: {str(e)}"
-                            logging.error(error_msg)
-                            operation_logs.append(error_msg)
-                            folder_files_mapping[folder]["validated_files"].append({
-                                "file_name": file_name,
-                                "error": str(e)
-                            })
-        
-        result = {
-            "status": "success",
-            "input_file": input_file_xlsx,
-            "input_folder": input_folder_path,
-            "output_folder_today": output_folder_path_today,
-            "output_folder_past": output_folder_path_past,
-            "input_day": input_day,
-            "xlsx_data": df_xlsx.to_dict(orient="records"),
-            "total_patterns_from_xlsx": len(xlsx_patterns),
-            "xlsx_patterns": list(sorted(xlsx_patterns)),
-            "all_folders_found": list(sorted(folders)),
-            "total_folders_found": len(folders),
-            "filtered_folders": filtered_folders,
-            "total_filtered_folders": len(filtered_folders),
-            "folder_files_mapping": folder_files_mapping,
-            "operation_logs": operation_logs,
-            "message": f"Found {len(filtered_folders)} matching folders from {len(xlsx_patterns)} XLSX patterns out of {len(folders)} total folders"
-        }
+        result = process_ma_hc_data_convert(req_body)
 
         return func.HttpResponse(
             json.dumps(result, ensure_ascii=False, indent=2),
             status_code=200,
             mimetype="application/json"
         )
-        
+
+    except ValueError as ve:
+        return func.HttpResponse(
+            json.dumps({"status": "error", "message": str(ve)}),
+            status_code=400,
+            mimetype="application/json"
+        )
+
     except Exception as e:
-        logging.error(f"Error in phase1_SD_hc_data_convert: {str(e)}")
+        logging.error(f"Error in phase1_ma_hc_data_convert: {str(e)}")
         import traceback
         logging.error(traceback.format_exc())
         return func.HttpResponse(
@@ -852,6 +629,236 @@ def phase1_ma_hc_data_convert(req: func.HttpRequest) -> func.HttpResponse:
             status_code=500,
             mimetype="application/json"
         )
+
+def process_ma_hc_data_convert(req_body: dict) -> dict:
+    container_name = req_body.get("container_name", "external")
+    input_file_xlsx = req_body.get("input_file_xlsx")
+    input_sheet_name = req_body.get("input_sheet_name")
+    input_folder_path = req_body.get("input_folder_path")
+    output_folder_path_today = req_body.get("output_folder_path_today")
+    output_folder_path_past = req_body.get("output_folder_path_past")
+    input_day = req_body.get("input_day")
+
+    if not input_file_xlsx or not input_folder_path or not output_folder_path_today or not output_folder_path_past:
+        raise ValueError(
+        "input_file_xlsx, input_folder_path, output_folder_path_today, and output_folder_path_past are required"
+        )
+    
+    connection_string = os.environ.get("AZURE_STORAGE_CONNECTION_STRING")
+    blob_service = BlobServiceClient.from_connection_string(connection_string)
+
+    blob_client_xlsx = blob_service.get_blob_client(container=container_name, blob=input_file_xlsx)
+    xlsx_data = blob_client_xlsx.download_blob().readall()
+    df_xlsx = pd.read_excel(
+        BytesIO(xlsx_data),
+        sheet_name=input_sheet_name,
+        header=None,
+        dtype=str
+    )
+
+    if df_xlsx.empty:
+        raise ValueError("XLSX sheet is empty")
+    
+    xlsx_patterns = set(
+        df_xlsx.iloc[:, 0]
+        .dropna()
+        .astype(str)
+        .str.strip()
+        .loc[lambda x: x != ""]
+    )
+    
+    container_client = blob_service.get_container_client(container=container_name)
+    
+    folder_prefix = input_folder_path.strip("/")
+    if folder_prefix and not folder_prefix.endswith("/"):
+        folder_prefix += "/"
+    
+    blobs = container_client.list_blobs(name_starts_with=folder_prefix)
+    
+    folders = set()
+    for blob in blobs:
+        blob_path = blob.name[len(folder_prefix):]
+        if "/" in blob_path:
+            folder_name = blob_path.split("/")[0]
+            folders.add(folder_name)
+    
+    filtered_folders = [f for f in folders if f in xlsx_patterns]
+    filtered_folders.sort()
+    
+    folder_files_mapping = {}
+    operation_logs = [] 
+    
+    if input_day:
+        file_types = ["ZA.csv", "ZI.csv", "ZK.csv"]
+        
+        for folder in filtered_folders:
+            folder_path = f"{folder_prefix}{folder}/"
+            found_files = []
+            
+            blobs_in_folder = container_client.list_blobs(name_starts_with=folder_path)
+            
+            for blob in blobs_in_folder:
+                blob_name = blob.name.split("/")[-1]
+                if (len(blob_name) >= 15 and 
+                    blob_name.startswith("01") and 
+                    blob_name[2:10].isdigit() and 
+                    any(blob_name.endswith(ft) for ft in file_types)):
+                    found_files.append(blob_name)
+            
+            if found_files:
+                folder_files_mapping[folder] = {
+                    "files": sorted(found_files),
+                    "validated_files": [],
+                    "processed_files": []
+                }
+                
+                try:
+                    corp, store = folder.split("_", 1)
+                except ValueError:
+                    error_msg = f"✗ Invalid folder format (expected corp_store): {folder}"
+                    logging.error(error_msg)
+                    operation_logs.append(error_msg)
+                    continue
+                
+                for file_name in found_files:
+                    file_path = f"{folder_path}{file_name}"
+                    try:
+                        # df_csv = read_csv_from_blob(container_client, file_path)
+                        blob_client = container_client.get_blob_client(file_path)
+                        blob_data = blob_client.download_blob().readall()
+
+                        df_csv = None
+                        for encoding in ['utf-8', 'cp932', 'shift_jis']:
+                            try:
+                                csv_string = blob_data.decode(encoding)
+                                df_csv = pd.read_csv(
+                                    io.StringIO(csv_string),
+                                    header=None,    
+                                    dtype=object
+                                )
+                                break
+                            except UnicodeDecodeError:
+                                continue
+                        name = file_name[-6:-4]
+                        file_type = name + "_MA"
+                        schema_columns = CSV_SCHEMAS.get(file_type, [])
+
+                        if schema_columns and df_csv.shape[1] == len(schema_columns):
+                            df_csv.columns = schema_columns
+                        else:
+                            raise ValueError(
+                                f"Column count mismatch: csv={df_csv.shape[1]}, schema={len(schema_columns)} ({file_type})"
+                            )
+                        
+                        if '年月日' in df_csv.columns:
+                            csv_day = df_csv['年月日'].iloc[0] if len(df_csv) > 0 else None
+                            csv_day_str = str(csv_day).strip() if csv_day is not None else ""
+                            
+                            file_type = file_name[-6:-4] + "_MA"
+                            name = file_name[-6:-4]
+
+                            schema_columns = CSV_SCHEMAS.get(file_type, [])
+                            
+                            if schema_columns:
+                                df_output = pd.DataFrame()
+
+                                for col in schema_columns:
+                                    if col in df_csv.columns:
+                                        df_output[col] = df_csv[col]
+                                    else:
+                                        df_output[col] = ''
+
+                                df_csv = df_output
+                            
+                            df_csv.insert(0, '会社コード', corp)
+                            df_csv.insert(1, '店舗コード', store)
+                            
+                            if csv_day_str == input_day:
+                                output_folder = output_folder_path_today
+                                match_status = True
+                            else:
+                                output_folder = output_folder_path_past
+                                match_status = False
+                            
+                            output_filename = f"{corp}{store}{csv_day_str}{name}_2.csv"
+                            output_folder_structured = f"{output_folder.strip('/')}/{corp}{store}{csv_day_str}/"
+                            output_file_path = f"{output_folder_structured}{output_filename}"
+                            
+                            try:
+                                csv_string = df_csv.to_csv(index=False)
+                                try:
+                                    csv_bytes = csv_string.encode('shift_jis')
+                                except UnicodeEncodeError:
+                                    csv_bytes = csv_string.encode('cp932', errors='replace')
+                                
+                                blob_client_out = container_client.get_blob_client(output_file_path)
+                                blob_client_out.upload_blob(csv_bytes, overwrite=True)
+                                
+                                folder_files_mapping[folder]["validated_files"].append({
+                                    "file_name": file_name,
+                                    "date_match": match_status,
+                                    "csv_day": csv_day_str
+                                })
+                                
+                                folder_files_mapping[folder]["processed_files"].append({
+                                    "original_file": file_name,
+                                    "output_file": output_filename,
+                                    "output_path": output_file_path,
+                                    "output_folder": "today" if match_status else "past"
+                                })
+                                
+                                if match_status:
+                                    log_msg = f"✓ Folder: {folder}, File: {file_name}, Day: {csv_day_str} (matches {input_day}) → saved to output_folder_today"
+                                    logging.info(log_msg)
+                                    operation_logs.append(log_msg)
+                                else:
+                                    log_msg = f"✗ Folder: {folder}, File: {file_name}, Day: {csv_day_str} (expected {input_day}) → saved to output_folder_past"
+                                    logging.info(log_msg)
+                                    operation_logs.append(log_msg)
+                                    
+                            except Exception as write_error:
+                                folder_files_mapping[folder]["validated_files"].append({
+                                    "file_name": file_name,
+                                    "error": f"Failed to write output: {str(write_error)}"
+                                })
+                                error_msg = f"✗ Error writing file {file_name} in {folder}: {str(write_error)}"
+                                logging.error(error_msg)
+                                operation_logs.append(error_msg)
+                        else:
+                            error_msg = f"✗ Folder: {folder}, File: {file_name} - 年月日 column not found"
+                            logging.warning(error_msg)
+                            operation_logs.append(error_msg)
+                            folder_files_mapping[folder]["validated_files"].append({
+                                "file_name": file_name,
+                                "date_match": False,
+                                "error": "年月日 column not found"
+                            })
+                    except Exception as e:
+                        error_msg = f"✗ Error reading file {file_name} in {folder}: {str(e)}"
+                        logging.error(error_msg)
+                        operation_logs.append(error_msg)
+                        folder_files_mapping[folder]["validated_files"].append({
+                            "file_name": file_name,
+                            "error": str(e)
+                        })
+    
+    return {
+        "status": "success",
+        "input_file": input_file_xlsx,
+        "input_folder": input_folder_path,
+        "output_folder_today": output_folder_path_today,
+        "output_folder_past": output_folder_path_past,
+        "input_day": input_day,
+        "xlsx_data": df_xlsx.to_dict(orient="records"),
+        "total_patterns_from_xlsx": len(xlsx_patterns),
+        "xlsx_patterns": list(sorted(xlsx_patterns)),
+        "all_folders_found": list(sorted(folders)),
+        "total_folders_found": len(folders),
+        "filtered_folders": filtered_folders,
+        "total_filtered_folders": len(filtered_folders),
+        "folder_files_mapping": folder_files_mapping,
+        "operation_logs": operation_logs,
+    }
 
 @app.route(route="phase1/kd_hc_data_convert", methods=["POST"])
 def phase1_kd_hc_data_convert(req: func.HttpRequest) -> func.HttpResponse:
@@ -2961,6 +2968,151 @@ def phase1_csv_out(req: func.HttpRequest) -> func.HttpResponse:
             mimetype="application/json"
         )
 
+def create_request_context():
+    request_id = str(uuid4())
+    start_time = dt.datetime.utcnow()
+    operation_logs = []
+
+    def log_event(level, event, message, **kwargs):
+        operation_logs.append({
+            "ts": dt.datetime.utcnow().isoformat(timespec="seconds") + "Z",
+            "level": level,
+            "event": event,
+            "msg": message,
+            "req": request_id,
+            **kwargs
+        })
+
+    return {
+        "request_id": request_id,
+        "start_time": start_time,
+        "operation_logs": operation_logs,
+        "log_event": log_event
+    }
+
+def write_logs_to_blob(
+    logs: list,
+    log_root_dir: str,
+    phase_name: str
+):
+    if not log_root_dir or not phase_name or not logs:
+        return
+
+    connection_string = os.environ.get("AZURE_STORAGE_CONNECTION_STRING")
+    container_name = os.environ.get("AZURE_STORE_CONTAINER")
+
+    if not connection_string or not container_name:
+        return
+
+    blob_service = BlobServiceClient.from_connection_string(connection_string)
+    container_client = blob_service.get_container_client(container_name)
+
+    tokyo_time = dt.datetime.now(ZoneInfo("Asia/Tokyo"))
+    time_str = tokyo_time.strftime("%Y%m%d_%H%M%S")
+
+    blob_path = (
+        f"{log_root_dir.strip('/')}/"
+        f"{phase_name}/"
+        f"{phase_name}_{time_str}.log"
+    )
+
+    log_content = "\n".join(
+        json.dumps(log, ensure_ascii=False) for log in logs
+    )
+
+    blob_client = container_client.get_blob_client(blob_path)
+    blob_client.upload_blob(
+        log_content,
+        overwrite=True,
+        content_type="application/json"
+    )
+
+@app.route(route="phase1/check_connect_synapse", methods=["GET"])
+def phase1_check_connect_synapse(req: func.HttpRequest) -> func.HttpResponse:
+    ctx = create_request_context()
+    log_event = ctx["log_event"]
+
+    log_root_dir = os.environ.get("DI_PHASE1_LOG_DIR")
+
+    try:
+        log_event("INFO", "HTTP_START", "Start check_connect_synapse")
+
+        result = check_connect_synapse_service(log_event)
+
+        log_event("INFO", "HTTP_SUCCESS", "Request completed successfully")
+
+        return func.HttpResponse(
+            json.dumps({
+                **result,
+                "request_id": ctx["request_id"],
+                "logs": ctx["operation_logs"]
+            }),
+            status_code=200 if result["status"] == "success" else 500,
+            mimetype="application/json"
+        )
+
+    except Exception as e:
+        log_event("ERROR", "HTTP_EXCEPTION", str(e))
+
+        return func.HttpResponse(
+            json.dumps({
+                "status": "error",
+                "message": str(e),
+                "request_id": ctx["request_id"],
+                "logs": ctx["operation_logs"]
+            }),
+            status_code=500,
+            mimetype="application/json"
+        )
+
+    finally:
+        write_logs_to_blob(
+            logs=ctx["operation_logs"],
+            log_root_dir=log_root_dir,
+            phase_name="check_connect_synapse"
+        )
+    
+def check_connect_synapse_service(log_event):
+    try:
+        log_event("INFO", "START", "Start checking Synapse connection")
+
+        user = os.environ.get("USER_SYNAPSE_READ")
+        password = os.environ.get("PASSWORD_SYNAPSE_READ")
+        server = os.environ.get("SERVER_SYNAPSE")
+        database = os.environ.get("DATABASE_SYNAPSE")
+
+        conn_str = (
+            f"Driver={{ODBC Driver 18 for SQL Server}};"
+            f"Server={server};"
+            f"Database={database};"
+            f"UID={user};"
+            f"PWD={password};"
+        )
+
+        log_event("INFO", "CONNECT", "Connecting to Synapse")
+
+        with pyodbc.connect(conn_str, timeout=5) as conn:
+            with conn.cursor() as cursor:
+                cursor.execute("SELECT 1")
+                row = cursor.fetchone()
+
+        if row and row[0] == 1:
+            log_event("INFO", "SUCCESS", "Test query succeeded")
+            return {
+                "status": "success",
+                "message": "Successfully connected to Synapse and executed test query."
+            }
+
+        log_event("ERROR", "INVALID_RESULT", "Test query returned unexpected result")
+        return {
+            "status": "failure",
+            "message": "Test query did not return expected result."
+        }
+
+    except Exception as e:
+        log_event("ERROR", "EXCEPTION", str(e))
+        raise
+
 # def join_hc_mst_inner(zi_df, hc_mst_lookup):
 #     result_rows = []
 
@@ -3119,16 +3271,16 @@ def phase1_csv_out(req: func.HttpRequest) -> func.HttpResponse:
 # XML check and delete function API    #
 # =====================================#    
 
-@app.function_name(name="xml_check_delete")
-@app.route(route="xml_check_delete", methods=["GET", "POST"], auth_level=func.AuthLevel.ANONYMOUS)
+@app.function_name(name="xml_folder_initial")
+@app.route(route="xml_folder_initial", methods=["GET", "POST"], auth_level=func.AuthLevel.ANONYMOUS)
 def xml_check_delete_function(req: func.HttpRequest) -> func.HttpResponse:
     """
     Azure Function to check and delete XML files based on lookup
     """
     logging.info('Python HTTP trigger function processed a request for xml_check.')
-    
+
     try:
-    
+
         # Get day parameter
         day_param = req.params.get('day')
         if not day_param:
@@ -3137,7 +3289,7 @@ def xml_check_delete_function(req: func.HttpRequest) -> func.HttpResponse:
                 day_param = req_body.get('day')
             except ValueError:
                 raise ValueError("'day' parameter is required.") 
-        
+
         if len(day_param) != 8:
             raise ValueError("day must be in YYYYMMDD format")
         # Process XML check and deletion
@@ -3150,14 +3302,14 @@ def xml_check_delete_function(req: func.HttpRequest) -> func.HttpResponse:
             f"XML check and deletion completed for day: {day_param}. {result_no_dk}, {result_no_kd}, {result_no_sd}, {result_no_ma}",
             status_code=200
         )
-        
+
     except Exception as e:
         logging.error(f"Error in xml_check_function: {str(e)}")
         return func.HttpResponse(
             f"Error: {str(e)}",
             status_code=500
         )
-    
+
 # =====================================#
 # CSV data put function API            #
 # =====================================#    
@@ -3168,50 +3320,50 @@ def csv_data_put_function(req: func.HttpRequest) -> func.HttpResponse:
     """
     Azure Function to copy CSV data based on domain and day
     """
-    logging.info('Python HTTP trigger function processed a request for csv_data_put.')
-    
+    logging.info('Python HTTP trigger function processed a request for csv_data_copy.')
+
     try:
         # Get parameters
         day_param = req.params.get('day')
-        
+
         if not day_param:
             try:
                 req_body = req.get_json()
                 day_param = day_param or req_body.get('day')
             except ValueError:
                 pass 
-        
+
         if not day_param:
             raise ValueError("'day' parameter is required.")
-        
+
         if len(day_param) != 8:
             raise ValueError("day must be in YYYYMMDD format")
-        
+
         # Get blob storage settings from environment variables
-        connection_string = os.environ.get('AzureWebJobsStorage')
+        connection_string = os.environ.get('AZURE_STORAGE_CONNECTION_STRING')
         if not connection_string:
-            raise ValueError("AzureWebJobsStorage is not configured")
+            raise ValueError("AZURE_STORAGE_CONNECTION_STRING is not configured")
         container_name = os.environ.get('STORAGE_CONTAINER_NAME', 'external')
-        
+
         blob_service_client = BlobServiceClient.from_connection_string(connection_string)
-        
+
         # Process CSV data put
         # Copy Data For DK
-        csv_data_put(day_param, DomainEnum.DK, container_name, blob_service_client)
+        csv_data_copy(day_param, DomainEnum.DK, container_name, blob_service_client)
         # Copy Data For KD
-        csv_data_put(day_param, DomainEnum.KD, container_name, blob_service_client)
+        csv_data_copy(day_param, DomainEnum.KD, container_name, blob_service_client)
         # Copy Data For SD
-        csv_data_put(day_param, DomainEnum.SD, container_name, blob_service_client)
+        csv_data_copy(day_param, DomainEnum.SD, container_name, blob_service_client)
         # Copy Data For MA
-        csv_data_put(day_param, DomainEnum.MA, container_name, blob_service_client)
-        
+        csv_data_copy(day_param, DomainEnum.MA, container_name, blob_service_client)
+
         return func.HttpResponse(
-            f"CSV data put completed for day: {day_param}",
+            f"CSV data copy completed for day: {day_param}",
             status_code=200
         )
-        
+
     except Exception as e:
-        logging.error(f"Error in csv_data_put_function: {str(e)}")
+        logging.error(f"Error in csv_data_copy_function: {str(e)}")
         return func.HttpResponse(
             f"Error: {str(e)}",
             status_code=500
@@ -3228,7 +3380,7 @@ def xml_exist_check_function(req: func.HttpRequest) -> func.HttpResponse:
     Azure Function to check existence of XML files based on lookup
     """
     logging.info('Python HTTP trigger function processed a request for xml_exist_check.')
-    
+
     try:
         # Get day parameter
         day_param = req.params.get('day')
@@ -3238,24 +3390,24 @@ def xml_exist_check_function(req: func.HttpRequest) -> func.HttpResponse:
                 day_param = req_body.get('day')
             except ValueError:
                 raise ValueError("'day' parameter is required.") 
-        
+
         if len(day_param) != 8:
             raise ValueError("day must be in YYYYMMDD format")
 
         # Process XML existence check
         exists = xml_exist_check(day_param)
-        
+
         if not exists:
             return func.HttpResponse(
                 f"XML files are missing for day: {day_param}",
                 status_code=404
             )
-        
+
         return func.HttpResponse(
             f"XML existence check completed for day: {day_param}. All files exist: {exists}",
             status_code=200
         )
-        
+
     except Exception as e:
         logging.error(f"Error in xml_exist_check_function: {str(e)}")
         return func.HttpResponse(
@@ -3289,8 +3441,7 @@ def xml_check_delete(
     blob_service = BlobServiceClient.from_connection_string(conn_str)
     logging.info(f"Account name: {blob_service.account_name}")
 
-    container = blob_service.get_container_client(
-        container_name, )
+    container = blob_service.get_container_client(container_name)
     logging.info(f"Accessed container: {container_name}")
 
     # 1. list subfolders
@@ -3302,7 +3453,6 @@ def xml_check_delete(
         logging.info(f"Found blob: {blob.name}")
         folder_name = blob.name[len(day_path):len(day_path)+11]
         subfolders.add(folder_name)
-
     logging.info(f"Found subfolders: {subfolders}")
 
     # 2. lookup excel 
@@ -3329,22 +3479,19 @@ def xml_check_delete(
     deleted = []
 
     # initial Data Lake Client 
-    service_client = DataLakeServiceClient.from_connection_string(conn_str)
-    file_system_client = service_client.get_file_system_client(container_name)
+    # service_client = DataLakeServiceClient.from_connection_string(conn_str)
+    # file_system_client = service_client.get_file_system_client(container_name)
 
     for item in filtered: 
-        target = item[:5] + "_" + item[6:11]
-        directory_path = f"{day_path}{target}/"
+        directory_path = f"{day_path}{item}/"
 
-        try: 
-            directory_client = file_system_client.get_directory_client(directory_path)
-            logging.info(f"Deleting directory: {directory_path}")
-            directory_client.delete_directory(recursive=True)
-            deleted.append(target)
-            logging.info(f"Deleted directory: {directory_path}")
-
-        except Exception as e:
-            logging.error(f"Failed to delete directory: {directory_path}. Error: {str(e)}")
+        for path in container.list_blobs(name_starts_with=directory_path):
+            if path.is_directory: 
+                continue
+            logging.info(f"Deleting blob: {path.name}")
+            blob_client = container.get_blob_client(path.name)  
+            blob_client.delete_blob()
+        deleted.append(item)
 
     return {
         "input_day": day, 
@@ -3356,7 +3503,7 @@ def xml_check_delete(
 # CSV data put function logic          #
 # =====================================#
 
-def csv_data_put(
+def csv_data_copy(
     day: str, 
     domain: DomainEnum, 
     container_name: str, 
@@ -3364,14 +3511,14 @@ def csv_data_put(
 ): 
     logging.info(f"Starting csv_data_put for day: {day}, domain: {domain.value}")
     container_client = blob_service_client.get_container_client(container_name)
-    
+
     DOMAIN_SOURCE_PATH = {
         DomainEnum.DK: "ダイコクHC/当日データ/",
         DomainEnum.KD: "北電子HC/当日データ/",
         DomainEnum.SD: "三幸電子HC/当日データ/",
         DomainEnum.MA: "マースHC/当日データ/",
     }
-    
+
     if domain not in DOMAIN_SOURCE_PATH: 
         raise ValueError(f"Unsupported domain: {domain}")
 
@@ -3382,37 +3529,54 @@ def csv_data_put(
 
     copied = 0 
     for blob in blobs: 
+        # check if blob is a CSV file
         file_name = blob.name.split('/')[-1] 
 
-        if not file_name.endswith('.csv') or not file_name.startswith('0000'): 
+        if not file_name.endswith('.csv'): 
             continue
 
-        folder_name = blob.name[len(src_prefix):len(src_prefix)+18]
-        logging.info(f"Processing blob: {blob.name}, folder_name: {folder_name}")
+        structure_check = blob.name[len(src_prefix):]
 
-        des_folder_name = f"{folder_name[:5]}_{folder_name[5:10]}"
-        logging.info(f"Destination folder name: {des_folder_name}")
-       
-        dest_blob_path = (
-            f"HC連携/テスト/dynam/send/"
-            f"{day}/" 
-            f"{des_folder_name}/"
-            f"xml/"
-            f"{folder_name}/"
-            f"{file_name}"
-        )
-        logging.info(f"Destination blob path: {''.join(dest_blob_path)}")
+        if "/" in structure_check: 
 
-        # Get Blob Clients
-        src_blob_client = container_client.get_blob_client(blob)
-        dest_blob_client = container_client.get_blob_client(dest_blob_path)
+            folder_name = blob.name[len(src_prefix):len(src_prefix)+18]
+            logging.info(f"Processing blob: {blob.name}, folder_name: {folder_name}")
 
-        # Use Server-Side Copy instead of Download/Upload
-        # This is much faster as data stays within the Azure network
-        dest_blob_client.start_copy_from_url(src_blob_client.url)
-        
-        logging.info(f"Initiated server-side copy to {dest_blob_path}")
-        copied += 1
+            des_folder_name = f"{folder_name[:5]}_{folder_name[5:10]}"
+            logging.info(f"Destination folder name: {des_folder_name}")
+
+            dest_blob_path = (
+                f"HC連携/テスト/dynam/send/"
+                f"{day}/" 
+                f"{des_folder_name}/"
+                f"xml/"
+                f"{folder_name}/"
+                f"{file_name}"
+            )
+            logging.info(f"Destination blob path: {''.join(dest_blob_path)}")
+
+            # Get Blob Clients
+            src_blob_client = container_client.get_blob_client(blob)
+            dest_blob_client = container_client.get_blob_client(dest_blob_path)
+
+            # Use Server-Side Copy instead of Download/Upload
+            dest_blob_client.start_copy_from_url(src_blob_client.url)
+
+            logging.info(f"Initiated server-side copy to {dest_blob_path}")
+            copied += 1
+        else: 
+            dest_blob_path = (
+                f"HC連携/テスト/dynam/send/"
+                f"{day}/" 
+                f"{file_name}"
+            )
+            src_blob_client = container_client.get_blob_client(blob)
+            dest_blob_client = container_client.get_blob_client(dest_blob_path)
+            dest_blob_client.start_copy_from_url(src_blob_client.url)
+
+            logging.info(f"Initiated server-side copy to {dest_blob_path}")
+            copied += 1
+
 
     return {
         "domain": domain.value,

@@ -4,3 +4,4 @@ pandas
 numpy
 openpyxl
 azure-storage-file-datalake
+pyodbc
