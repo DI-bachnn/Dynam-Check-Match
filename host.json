@@ -1,0 +1,31 @@
+{
+  "version": "2.0",
+  "logging": {
+    "applicationInsights": {
+      "samplingSettings": {
+        "isEnabled": true,
+        "maxTelemetryItemsPerSecond": 20
+      }
+    },
+    "logLevel": {
+      "default": "Warning",
+      "Function": "Information",
+      "Host.Results": "Information",
+      "Host.Aggregator": "Warning",
+      "Azure.Storage.Blobs": "Warning",
+      "Azure.Core": "Warning",
+      "Microsoft": "Warning"
+    }
+  },
+  "extensionBundle": {
+    "id": "Microsoft.Azure.Functions.ExtensionBundle",
+    "version": "[4.*, 5.0.0)"
+  },
+  "extensions": {
+    "blobs": {
+      "maxDegreeOfParallelism": 4,
+      "poisonBlobThreshold": 3
+    }
+  },
+  "functionTimeout": "00:30:00"
+}
